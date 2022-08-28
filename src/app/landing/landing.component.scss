@@ -1,0 +1,62 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    .logo{
+        margin-top: 79px;
+        margin-bottom: 85.43px;
+        @media only screen and (min-width: 389px) and (max-width:844px){
+            margin-top: 0px;
+        }
+    }
+    .layer{
+        margin-bottom: 129.89px;
+    }
+   
+    @font-face {
+        font-family: "myfont";
+        src: url("../../../fonts/Inter-Medium.otf");
+        
+    }
+    button{
+        width: 387px;
+        height: 60px;
+        margin-bottom: 26px;
+        font-family: "myfont";
+        border-radius: 8px;
+        background: #62A1EB;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        color: #FFFFFF;
+        border: none;
+        cursor: pointer;
+        @media only screen and (min-width: 389px) and (max-width:844px){
+            width: 358px;
+            margin-bottom: 16px;
+           
+        }
+    }
+
+    button:hover{
+        background: #317AD0;
+    }
+    button:focus{
+        background: #1A5DAB;
+    }
+ 
+}
+
+@media only screen and (min-width: 389px) and (max-width:844px){
+    .layer{
+        display: none;
+    }
+    .btn{
+        margin-top: 122px;
+    }
+    
+    
+}
