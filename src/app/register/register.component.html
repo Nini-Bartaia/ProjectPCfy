@@ -1,56 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./register.component.scss">
-    <title>Document</title>
-</head>
 <body>
-    <img src="assets/Group 4.png" alt="" routerLink="/landing">
+    
+    <img src="assets/Group 4.png" alt="" routerLink="/landing" class="arrow">
+
     <mat-tab-group>
+        
         <mat-tab label="თანამშრომლის ინფო">
             
-            <form [formGroup]="myform">
-                <div>
-                <label for="name" class="name">სახელი</label>
+            <form [formGroup]="myform" >
+                <div class="form-group">
+                <!-- <label for="name" class="name">სახელი</label>
+                <input type="text" id="name" formControlName="name" placeholder="გრიშა" class="name2" > -->
+                <span *ngIf="myform.get('name')?.untouched || myform.get('name')?.valid ; then show; else error"></span>
+                <ng-template #show>
+                    
+                    <label for="name" class="name">სახელი</label>
                 <input type="text" id="name" formControlName="name" placeholder="გრიშა" class="name2" >
-                <span class="span">მინიმუმ 2 სიმბოლო, ქართული ასოები</span>
+                <span  class="span">მინიმუმ 2 სიმბოლო, ქართული ასოები </span>
+                </ng-template>
+                <ng-template #error>
+                
+                <label for="name" class="name2 name4" >სახელი</label>
+                <input type="text" id="name" formControlName="name" placeholder="გრიშა" class="name3" >
+                <span class="alert" *ngIf="myform.get('name')?.touched && myform.get('name')?.invalid">გამოიყენე ქართული ასოები</span>
+            </ng-template>
                 </div>
                 <div>
+                <!-- <label for="surname">გვარი</label>
+                <input type="text" id="surname" formControlName="surname" placeholder="ბაგრატიონი">
+                <span>მინიმუმ 2 სიმბოლო, ქართული ასოები</span> -->
+                <span *ngIf="myform.get('surname')?.untouched || myform.get('surname')?.valid ; then showsurname; else errorsurname"></span>
+
+                <ng-template #showsurname>
                 <label for="surname">გვარი</label>
                 <input type="text" id="surname" formControlName="surname" placeholder="ბაგრატიონი">
                 <span>მინიმუმ 2 სიმბოლო, ქართული ასოები</span>
-                </div>
-                <!-- <div>
-                    <label for="mail">მეილი</label>
-                    <input type="email" id="mail" formControlName="email">
-                </div>
-                    <div>
-                    <label for="tel">ტელეფონის ნომერი</label>
-                    <input type="tel" id="tel" formControlName="phone">
-                </div> -->
+                </ng-template>
 
-                <label for="team">თიმი</label>
-                <div class="col-sm-10">
-                <select name="team" id="" (change)="selectList($event)">
-                    <option >team</option>
-                    <option  *ngFor="let val of mydata">
+                <ng-template #errorsurname>
+                    
+                        <label for="surname" class="name4">გვარი</label>
+                        <input type="text" id="surname" formControlName="surname" placeholder="ბაგრატიონი" class="surname">
+                        <span class="alert2">მინიმუმ 2 სიმბოლო, ქართული ასოები</span>
+                </ng-template>
+                </div>
+               
+                <div class="parent">
+                <select name="team" (change)="selectList($event)">
+                    <option selected disabled hidden>თიმი</option>
+                    <option [value]="val.id" *ngFor="let val of mydata">
                         {{val.name}}
                     </option>
                 </select>
+
+                <select (change)="selectList($event)">
+                    <option selected disabled hidden>პოზიცია</option>
+                    <option [value]="item.id" *ngFor="let item of position">
+                        {{item.name}}
+                    </option>
+                </select>
             </div>
-<!-- *ngFor="let val of mydata?.mydata" -->
-            
+                    
+                    <label for="mail" class="email">მეილი</label>
+                    <input type="email" id="mail" class="e-mail" formControlName="email" placeholder="grish666@redberry.ge">
+                    <span class="mailspan">უნდა მთავრდებოდეს @redberry.ge-ით</span>
+                   
+                    <label for="tel" class="phone2">ტელეფონის ნომერი</label>
+                    <input type="tel" id="tel" formControlName="phone" placeholder="+995 598 00 07 01">
+                    <span class="phonespan">უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს</span>
+                   
+
+                    <button type="submit" class="btn">შემდეგი</button>
+                
             </form>
+            <img src="/assets/LOGO-10 2.png" alt="" class="logo1">
     
 </mat-tab>
     <mat-tab label="ლეპტოპის მახასიათებლები">second</mat-tab>
 </mat-tab-group>
-
-
-
-  
 </body>
-</html>

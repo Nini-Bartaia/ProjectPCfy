@@ -1,17 +1,26 @@
 body{
     background-color: #EBEBEB;
+    .logo1{
+        margin-left: 917px;
+        margin-top: 30px;
+        width: 75px;
+    }
+    .arrow{
+        margin-left: 70px;
+        margin-top: 35px;
+    }
 .mat-tab-group{
-   // border: 2px solid yellow;
     margin-top: -25px;
+
+   
     
 form{
     background-color: white;
     border-radius: 18px;
     width: 1226px;
-   // border: 2px solid red;
-    height: 973px;
-    margin-left: 347;
+    height: 800px;
     margin-left: 347px;
+    margin-top: 20px;
    
 div {
     float: left;
@@ -30,9 +39,40 @@ div {
 
     
     .name,.name2,.span{
-        margin-left: 280px;
+        margin-left: 230px;
         
     }
+    .alert{
+        margin-left: 230px;
+        color: #E52F2F;
+        font-family: 'Helvetica Neue';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 21px;
+        
+    }
+    .alert2{
+        color: #E52F2F;
+        font-family: 'Helvetica Neue';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 21px;
+    }
+    .name4{
+        color:#E52F2F ;
+    }
+    
+    .name3{
+        border-color: #E52F2F;
+        margin-left:230px ;
+    }
+
+    .surname{
+        border-color: #E52F2F;
+    }
+    
     span{
         font-family: 'Helvetica Neue';
         font-style: normal;
@@ -40,17 +80,15 @@ div {
         font-size: 14px;
         line-height: 21px;
         color: #2E2E2E;
-        
     }
    
-   
     input{
-        width: 280px;
+        width: 310px;
         height: 40px;
         border: 1.8px solid #6499FF;
         padding-left: 10px;
         border-radius: 8px;
-        margin-right: 20px;
+        margin-right: 35px;
         font-family: 'Helvetica Neue';
         font-style: normal;
         font-weight: 400;
@@ -70,7 +108,124 @@ div {
    
 
 }
+.parent{
+    overflow: hidden;
+select{
+    width: 705px;
+    height: 45px;
+    margin-left: 230px;
+    border-radius: 8px;
+    color: #000000;
+    font-family: 'Helvetica Neue';
+    background:url("../../assets/Vector.png")  right center no-repeat  #EBEBEB;
+    appearance: none; 
+	-webkit-appearance: none;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.04em;
+    padding-left: 10px;
+    background-position-x: 670px;
+    background-size: 14px;
+    border: none;
+    margin-bottom: 40px;
+    cursor: pointer;
+    select::-ms-expand { 
+        display: none; 
+    }
+    option{
+        background-color: white;
+    }
+    option:hover{
+        background-color: #E7F0F8;
+    }
+    
 }
+}
+.email{
+    display: block;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+    position: relative;
+    top: 45%;
+    right: 62%;
+}
+.e-mail, #tel{
+    width: 690px;
+    height: 45px;
+    margin-left: 230px;
+    border-radius: 8px;
+    border: 1.8px solid #6499FF;
+    padding-left: 10px;
+    border-radius: 8px;
+    margin-right: 20px;
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    align-items: center;
+    color: #00000099;
+    margin-top: 20px;
+}
+#tel{
+    margin-top: 60px;
+    margin-bottom: 5px;
+}
+.phone2{
+    display: block;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+    position: relative;
+    left: 19%;
+    top: 7%;
+}
+.mailspan{
+    position: relative;
+    right: 59%;
+    top: 5%;
+}
+.phonespan{
+    margin-left: 235px;
+}
+.btn{
+    width: 176px;
+    height: 60px;
+    background: #62A1EB;
+    font-family: "Helvetica Neue";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
+    border-radius: 8px;
+    border: none;
+    margin-left: 755px;
+    margin-top: 100px;
+    cursor: pointer;
+}
+.btn:hover{
+    background: #317AD0;
+}
+.btn:focus{
+    background: #1A5DAB;
+}
+
+
+
+}
+
 
 }
 }
@@ -83,20 +238,13 @@ img{
 }
 
 
-// ::ng-deep .mat-ink-bar {
-    
-//     width: 162px !important;
-//     margin-left: 42px;
-//     background-color:#232323 !important;
-//   }
-
  ::ng-deep .mat-ink-bar {           
     &:before,
     &:after {
         content: "";
         height: 2px;
         width: 40px;
-        background-color: white;
+        background-color: #EBEBEB;
         position: absolute;
         left: 0;
        

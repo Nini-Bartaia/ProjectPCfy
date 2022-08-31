@@ -3,7 +3,7 @@ import { FormControl, FormGroup, UntypedFormGroup, Validators } from '@angular/f
 import { MatTableDataSource } from '@angular/material/table';
 import {MatTabsModule} from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { teams } from '../shared/form.interface';
+import { positions, teams } from '../shared/form.interface';
 import { SharedserviceService } from '../shared/sharedservice.service';
 @Component({
   selector: 'app-register',
@@ -12,6 +12,8 @@ import { SharedserviceService } from '../shared/sharedservice.service';
 })
 export class RegisterComponent implements OnInit {
   mydata: teams[]=[];
+  position:positions[]=[]
+  submitted:boolean=false;
 
   constructor(private service:SharedserviceService) { }
 
@@ -28,9 +30,15 @@ export class RegisterComponent implements OnInit {
 
     })
 
-    this.service.getData().subscribe((data:any)=>{
+    this.service.getData().subscribe((data)=>{
       console.log(data)
-      this.mydata=data.data;
+      this.mydata=data;
+    })
+
+    this.service.getPositions().subscribe((value)=>{
+      console.log(value)
+      this.position=value;
+      
     })
 
     // this.mydata = this.service.getData();
@@ -48,6 +56,9 @@ export class RegisterComponent implements OnInit {
    
     console.log(e.target.value)
   }
+
+
+   
   
 
 }

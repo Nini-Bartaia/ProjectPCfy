@@ -12,3 +12,9 @@ export interface teams{
     id:number,
     name:string
 }
+
+export interface positions{
+    id:number,
+    name:string,
+    teamsId:number
+}

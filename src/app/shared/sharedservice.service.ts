@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
-import { teams } from '../shared/form.interface';
+import { positions, teams } from '../shared/form.interface';
 
 
 @Injectable({
@@ -16,10 +16,11 @@ export class SharedserviceService {
 
   public getData():Observable<teams[]>{
     return this.http.get<{data:teams[]}>(this.myurl+'/teams').pipe(map(res =>{ return res.data}));
-    // return this.http.get<any>(this.myurl+'/teams');
-  
-    // .pipe(map(res =>{ return res}));
-    // return this.http.get<any>(this.myurl+'/teams').pipe(map((res:any)=>res.json()))
-    // return this.http.get<any>(this.myurl+'/teams').map(response => response.json())
+   
+  }
+
+  public getPositions():Observable<positions[]>{
+    return this.http.get<{data:positions[]}>(this.myurl+'/positions').pipe(map(res=>res.data))
+    
   }
 }
