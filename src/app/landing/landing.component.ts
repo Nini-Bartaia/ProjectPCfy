@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-landing',
@@ -15,4 +16,6 @@ export class LandingComponent implements OnInit {
     window.onresize=()=> this.onMobile= window.innerWidth <=390
   }
 
+
+ 
 }

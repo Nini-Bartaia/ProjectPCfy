@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./register.component.scss">
+    <title>Document</title>
+</head>
+<body>
+    <img src="assets/Group 4.png" alt="" routerLink="/landing">
+    <mat-tab-group>
+        <mat-tab label="თანამშრომლის ინფო">
+            
+            <form [formGroup]="myform">
+                <div>
+                <label for="name" class="name">სახელი</label>
+                <input type="text" id="name" formControlName="name" placeholder="გრიშა" class="name2" >
+                <span class="span">მინიმუმ 2 სიმბოლო, ქართული ასოები</span>
+                </div>
+                <div>
+                <label for="surname">გვარი</label>
+                <input type="text" id="surname" formControlName="surname" placeholder="ბაგრატიონი">
+                <span>მინიმუმ 2 სიმბოლო, ქართული ასოები</span>
+                </div>
+                <!-- <div>
+                    <label for="mail">მეილი</label>
+                    <input type="email" id="mail" formControlName="email">
+                </div>
+                    <div>
+                    <label for="tel">ტელეფონის ნომერი</label>
+                    <input type="tel" id="tel" formControlName="phone">
+                </div> -->
+
+                <label for="team">თიმი</label>
+                <div class="col-sm-10">
+                <select name="team" id="" (change)="selectList($event)">
+                    <option >team</option>
+                    <option  *ngFor="let val of mydata">
+                        {{val.name}}
+                    </option>
+                </select>
+            </div>
+<!-- *ngFor="let val of mydata?.mydata" -->
+            
+            </form>
+    
+</mat-tab>
+    <mat-tab label="ლეპტოპის მახასიათებლები">second</mat-tab>
+</mat-tab-group>
+
+
+
+  
+</body>
+</html>
