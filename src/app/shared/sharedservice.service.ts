@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
-import { positions, teams } from '../shared/form.interface';
+import { brands, cpus, positions, teams } from '../shared/form.interface';
 
 
 @Injectable({
@@ -23,4 +23,14 @@ export class SharedserviceService {
     return this.http.get<{data:positions[]}>(this.myurl+'/positions').pipe(map(res=>res.data))
     
   }
+
+  public getBrands():Observable<brands[]>{
+    return this.http.get<{data:brands[]}>(this.myurl +'/brands').pipe(map(res => res.data))
+  }
+  public getCpu():Observable<cpus[]>{
+    return this.http.get<{data:cpus[]}>(this.myurl +'/cpus').pipe(map(res => res.data))
+  }
+  
+
+
 }

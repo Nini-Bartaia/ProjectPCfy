@@ -1,5 +1,7 @@
 body{
     background-color: #EBEBEB;
+    height: auto;
+    
     .logo1{
         margin-left: 917px;
         margin-top: 30px;
@@ -8,20 +10,28 @@ body{
     .arrow{
         margin-left: 70px;
         margin-top: 35px;
+        cursor: pointer;
     }
 .mat-tab-group{
     margin-top: -25px;
-
-   
-    
-form{
+      
+.form1{
     background-color: white;
     border-radius: 18px;
     width: 1226px;
     height: 800px;
     margin-left: 347px;
-    margin-top: 20px;
+    margin-top: 52px;
    
+        // .upload{
+        //     width:878px;
+        //     height: 423px;
+        //     background: #F7F7F7;
+        //     border: 2px dashed #4386A9;
+        //     border-radius: 18px;
+        // }
+    
+    
 div {
     float: left;
     margin-right: 20px;
@@ -53,6 +63,14 @@ div {
         
     }
     .alert2{
+        color: #E52F2F;
+        font-family: 'Helvetica Neue';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 21px;
+    }
+    .alert3{
         color: #E52F2F;
         font-family: 'Helvetica Neue';
         font-style: normal;
@@ -117,7 +135,7 @@ select{
     border-radius: 8px;
     color: #000000;
     font-family: 'Helvetica Neue';
-    background:url("../../assets/Vector.png")  right center no-repeat  #EBEBEB;
+    background:url("/assets/Vector.png")  right center no-repeat  #EBEBEB;
     appearance: none; 
 	-webkit-appearance: none;
     font-style: normal;
@@ -142,6 +160,9 @@ select{
     }
     
 }
+}
+.select{
+    border-color: #E52F2F;
 }
 .email{
     display: block;
@@ -228,13 +249,340 @@ select{
 
 
 }
+
+.form2{
+    background-color: white;
+    border-radius: 18px;
+    width: 1226px;
+    height: 1571px;
+    margin-left: 347px;
+    margin-top: 20px;
+    position: relative;
+    .upload{
+        width:878px;
+        height: 423px;
+        background: #F7F7F7;
+        border: 2px dashed #4386A9;
+        border-radius: 18px;
+        margin-left: 174px;
+        margin-top: 68px;
+        position: absolute;
+        margin-top: 65px;
+       
+       
+
+        .btn2{
+            display:block;
+            width: 233px;
+            height: 60px;
+            background: #62A1EB;
+            border-radius: 8px;
+            background: #62A1EB;
+            font-family: "Helvetica Neue";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 24px;
+            color: #FFFFFF;
+            border-radius: 8px;
+            border: none;
+            margin-left: 322px;
+            margin-top: 70px;
+            cursor: pointer;
+
+        }
+        .upload2{
+            width: 195px;
+            height: 76px;
+            font-family: 'Helvetica Neue';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 38px;
+            color: #4386A9;
+            margin-left: 340px;
+            margin-top: 90px;
+        
+        }
+       
+    }
+    .show{
+        margin-top: -298px;
+        margin-left: -1px;
+       
+    
+    }
+    .shown{
+        display:block;
+        width: 233px;
+        height: 60px;
+        background: #62A1EB;
+        border-radius: 8px;
+        background: #62A1EB;
+        font-family: "Helvetica Neue";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        color: #FFFFFF;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        left: 67%;
+        top: 32%;
+    }
+.laptop{
+    display: inline-block;
+    margin-top: 550px;
+    margin-left: 170px;
+
+ 
+    input{
+        width: 408px;
+        height: 40px;
+        border: 1.8px solid #6499FF;
+        padding-left: 10px;
+        border-radius: 8px;
+        margin-right: 35px;
+        font-family: "Helvetica Neue";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21px;
+        align-items: center;
+        color: rgba(0, 0, 0, 0.6);
+    }
+}
+
+    .hint, .laptopName2, .laptopName{
+        display: block;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+
+    }
+    .parent2{
+       // overflow: hidden;
+        margin-top: -80px;
+    
+    .brand{
+    width: 408px;
+    height: 60px;
+    margin-left: 650px;
+    border-radius: 8px;
+    color: #000000;
+    font-family: "Helvetica Neue";
+    background: url("/assets/Vector.png") right center no-repeat #EBEBEB;
+    appearance: none;
+    -webkit-appearance: none;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.04em;
+    padding-left: 10px;
+    background-position-x: 370px;
+    background-size: 14px;
+    border: none;
+    margin-bottom: 40px;
+    cursor: pointer;
+    .brand::-ms-expand { 
+        display: none; 
+    }
+   
+    }
+    .brand2{
+    margin-left: 165px;
+    width: 277px;
+    height: 60px;
+    margin-top: 80px;
+    margin-right: 40px;
+    background-position-x: 240px;
+    }
+   
+    hr{
+        border: 1px solid #C7C7C7;
+        height: 0px;
+        width: 900px;
+        margin-top: 50px;
+    }
+    .div{
+        margin-left: 460px;
+        margin-top: -130px;
+    .hint2{
+        display: block;
+        font-family: Roboto, "Helvetica Neue", sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        margin-bottom: 5px;
+        font-size: 18px;
+        line-height: 21px;
+        color: #000000;
+        margin-top: 10px;
+    }
+    
+.cpuname2{
+    width: 277px;
+    height: 60px;
+    border: 1.8px solid #6499FF;
+    padding-left: 10px;
+    border-radius: 8px;
+    margin-right: 35px;
+    font-family: "Helvetica Neue";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.6);
+
+}
+    }
+
+    .div2{
+    margin-left: 770px;
+    margin-top: -130px;
+
+    .thread{
+        width: 277px;
+        height: 60px;
+        border: 1.8px solid #6499FF;
+        padding-left: 10px;
+        border-radius: 8px;
+        margin-right: 35px;
+        font-family: "Helvetica Neue";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21px;
+        align-items: center;
+        color: rgba(0, 0, 0, 0.6);
+    }
+    .hint3{
+        display: block;
+        font-family: Roboto, "Helvetica Neue", sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        margin-bottom: 5px;
+        font-size: 18px;
+        line-height: 21px;
+        color: #000000;
+        margin-top: 10px;
+    }
+}
+.div3{
+      
+    margin-top: 80px;
+    margin-left: 160px;
+    // width: 408px;
+    // height: 60px;
+    .thread2{
+        width: 408px;
+        height: 60px;
+    }
+
+}
+
+.radio{
+    margin-left: 700px;
+    margin-top: -100px;
+
+    .iconradio{
+        padding-left: 14px;
+    }
+    .SSD{
+        margin-right: 45px;
+    }
+    // label:before {
+    //     content: "\2022";
+    //    border: 2px solid red;
+        
+    // }
+    
+}
+.line{
+       
+    margin-top: 100px;
+}
+.div4{
+    margin-top: 50px;
+}
+
+.wrapper2{
+    margin-left: 645px;
+    margin-top: -100px;
+.thread3{
+    background: url("/assets/Vector3.png") right center no-repeat;
+    appearance: none;
+    -webkit-appearance: none;
+    background-position-x: 370px;
+    .thread3::-ms-expand { 
+        display: none; 
+    }
+
+}
+
+}
+.radio2{
+    margin-left: 160px;
+    margin-top: 40px;
+
+}
+
+
+   
+}
+
+.back{
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #62A1EB;
+    margin-left: 160px;
+    margin-top: 70px;
+    cursor: pointer;
+
+}
+.submit{
+    display: block;
+    width: 233px;
+    height: 60px;
+    background: #62A1EB;
+    border-radius: 8px;
+    background: #62A1EB;
+    font-family: "Helvetica Neue";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
+    border-radius: 8px;
+    border: none;
+    margin-left: 845px;
+    margin-top: -60px;
+    cursor: pointer;
+}
+
+    }
+
+    .form2 +img{
+        width: 75px;
+        margin-left: 900px;
+        margin-top: 30px;
+        padding-top: 0px;
+        padding-bottom: 20px;
+    }
+   
 }
 ::ng-deep .mat-tab-labels{
     justify-content: center !important;
-}
-
-img{
-    cursor: pointer;
 }
 
 

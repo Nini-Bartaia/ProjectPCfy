@@ -16,11 +16,13 @@ import {MatIconModule} from '@angular/material/icon'
 
 
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { SuccessComponent } from './success/success.component';
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
-    RegisterComponent
+    RegisterComponent,
+    SuccessComponent
   ],
   imports: [
     BrowserModule,
