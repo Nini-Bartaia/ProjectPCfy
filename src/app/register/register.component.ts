@@ -3,23 +3,24 @@ import { FormControl, FormGroup, UntypedFormGroup, Validators } from '@angular/f
 import { MatTableDataSource } from '@angular/material/table';
 import {MatTabGroup, MatTabsModule} from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { brands, cpus, positions, teams } from '../shared/form.interface';
+import { brands, cpus, data, positions, teams } from '../shared/form.interface';
 import { SharedserviceService } from '../shared/sharedservice.service';
 import { HttpClient } from '@angular/common/http';
-import { user } from '../shared/form.interface';
+import { FormArray } from '@angular/forms';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  formArr=[];
+  formArr!: FormGroup;
   mydata: teams[]=[];
   position:positions[]=[];
   brands:brands[]=[];
   cpus: cpus[]=[];
   isValid:boolean=false;
   active=0;
+  id=false;
   isshown=false;
   matTabs = [1,2]; 
   selectedFile:File|null=null;
@@ -28,37 +29,66 @@ export class RegisterComponent implements OnInit {
   step:number=2;
   selectedProjectIndex: number = 0;
   isDisabled=true;
+  public onMobile=false;
 
   constructor(private service:SharedserviceService,private http:HttpClient) { }
-
+ 
   myform=new UntypedFormGroup({});
   secondForm=new UntypedFormGroup({});
+  
   ngOnInit(): void {
-    
-    this.myform=new UntypedFormGroup({
-      name: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.pattern('([a-zA-Z]+|[\\u10D0-\\u10F0]+)')]),
-      surname: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.pattern('([a-zA-Z]+|[\\u10D0-\\u10F0]+)')]),
+
+    window.onresize=()=> this.onMobile= window.innerWidth <=390
+
+
+    this.formArr= new FormGroup({myform:new UntypedFormGroup({
+      name: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.pattern(/^[ა-ჰ]+$/ )]),
+      surname: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.pattern(/^[ა-ჰ]+$/)]),
       teamId: new FormControl(null,Validators.required),
       positionId: new FormControl(null,Validators.required),
       email: new FormControl('',[Validators.required,Validators.pattern(/^[^@]+@(redberry)\.ge$/i)]),
       phone: new FormControl(null,[Validators.required,Validators.pattern(/^\d{9}$/)]),
       
 
-    } )
+    } ), secondForm:new UntypedFormGroup({
+      laptopName:new FormControl('',[Validators.required,Validators.pattern(/^[A-Za-z0-9\s!@#$%^&*()_+=-`~\\\]\[{}|';:/.,?><]*$/)]),
+      laptopImage: new FormControl('',Validators.required),
+      laptopBrandId:new FormControl('',Validators.required),
+      laptopCpu:new FormControl('',Validators.required),
+      laptopCpuCores: new FormControl(null,[Validators.required,Validators.pattern(/^[0-9]*$/)]),
+      laptopCpuThreads:new FormControl(null,[Validators.required,Validators.pattern(/^[0-9]*$/)]),
+      laptopRam:new FormControl(null,[Validators.required,Validators.pattern(/^[0-9]*$/)]),
+      laptopHardDriveType:new FormControl('',Validators.required),
+      laptopState:new FormControl('',Validators.required),
+      laptopPurchaseDate:new FormControl(''),
+      laptopPrice:new FormControl('',[Validators.required,Validators.pattern(/^[0-9]*$/)]),
+      })
+  
+  })
+    // this.myform=new UntypedFormGroup({
+    //   name: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.pattern('([a-zA-Z]+|[\\u10D0-\\u10F0]+)')]),
+    //   surname: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.pattern('([a-zA-Z]+|[\\u10D0-\\u10F0]+)')]),
+    //   teamId: new FormControl(null,Validators.required),
+    //   positionId: new FormControl(null,Validators.required),
+    //   email: new FormControl('',[Validators.required,Validators.pattern(/^[^@]+@(redberry)\.ge$/i)]),
+    //   phone: new FormControl(null,[Validators.required,Validators.pattern(/^\d{9}$/)]),
+      
 
-    this.secondForm=new UntypedFormGroup({
-    laptopName:new FormControl('',[Validators.required,Validators.pattern(/^[A-Za-z0-9\s!@#$%^&*()_+=-`~\\\]\[{}|';:/.,?><]*$/)]),
-    laptopImage: new FormControl('',Validators.required),
-    laptopBrandId:new FormControl('',Validators.required),
-    laptopCpu:new FormControl('',Validators.required),
-    laptopCpuCores: new FormControl(null,[Validators.required,Validators.pattern(/^[0-9]*$/)]),
-    laptopCpuThreads:new FormControl(null,[Validators.required,Validators.pattern(/^[0-9]*$/)]),
-    laptopRam:new FormControl(null,[Validators.required,Validators.pattern(/^[0-9]*$/)]),
-    laptopHardDriveType:new FormControl('',Validators.required),
-    laptopState:new FormControl('',Validators.required),
-    laptopPurchaseDate:new FormControl(''),
-    laptopPrice:new FormControl('',[Validators.required,Validators.pattern(/^[0-9]*$/)]),
-    })
+    // } )
+
+    // this.secondForm=new UntypedFormGroup({
+    // laptopName:new FormControl('',[Validators.required,Validators.pattern(/^[A-Za-z0-9\s!@#$%^&*()_+=-`~\\\]\[{}|';:/.,?><]*$/)]),
+    // laptopImage: new FormControl('',Validators.required),
+    // laptopBrandId:new FormControl('',Validators.required),
+    // laptopCpu:new FormControl('',Validators.required),
+    // laptopCpuCores: new FormControl(null,[Validators.required,Validators.pattern(/^[0-9]*$/)]),
+    // laptopCpuThreads:new FormControl(null,[Validators.required,Validators.pattern(/^[0-9]*$/)]),
+    // laptopRam:new FormControl(null,[Validators.required,Validators.pattern(/^[0-9]*$/)]),
+    // laptopHardDriveType:new FormControl('',Validators.required),
+    // laptopState:new FormControl('',Validators.required),
+    // laptopPurchaseDate:new FormControl(''),
+    // laptopPrice:new FormControl('',[Validators.required,Validators.pattern(/^[0-9]*$/)]),
+    // })
 
     this.service.getData().subscribe((data)=>{
       console.log(data)
@@ -86,6 +116,8 @@ export class RegisterComponent implements OnInit {
     
 
   }
+
+ 
 
   // url="./assets/Frame.png";
   url=''
@@ -123,7 +155,8 @@ export class RegisterComponent implements OnInit {
   //   })
   // }
   public selectList(e:any){
-     //this.myform.controls['teamId'].setValue(e.target.value);
+     //.myform.controls['teamId'].setValue(e.target.value);
+    this.formArr.get('myform.teamId')?.setValue(e.target.value)
     // this.myform.controls['positionId'].setValue(e.target.value);
     console.log(e.target.value)
     //this.isValid=true;
@@ -132,6 +165,7 @@ export class RegisterComponent implements OnInit {
   public selectList2(e:any){
     //this.myform.controls['teamId'].setValue(e.target.value);
     //this.myform.controls['positionId'].setValue(e.target.value);
+    this.formArr.get('myform.positionId')?.setValue(e.target.value)
    console.log(e.target.value)
    //this.isValid=true;
    return e.target.value
@@ -139,6 +173,7 @@ export class RegisterComponent implements OnInit {
  public selectList3(e:any){
   //this.myform.controls['teamId'].setValue(e.target.value);
   //this.myform.controls['laptopBrandId'].setValue(e.target.value);
+  this.formArr.get('secondForm.laptopBrandId')?.setValue(e.target.value)
  console.log(e.target.value)
  //this.isValid=true;
  return e.target.value
@@ -146,6 +181,7 @@ export class RegisterComponent implements OnInit {
 public selectList4(e:any){
   //this.myform.controls['teamId'].setValue(e.target.value);
  // this.myform.controls['laptopbCpu'].setValue(e.target.value);
+ this.formArr.get('secondForm.laptopCpu')?.setValue(e.target.value)
  console.log(e.target.value)
  //this.isValid=true;
  return e.target.value
@@ -158,28 +194,52 @@ public getFile(event:any){
  
 }
 
-public postImage(){
-  const upload= new FormData();
-  upload.append('image',this.selectedFile!,this.selectedFile!.name)
-  this.http.post('https://pcfy.redberryinternship.ge/api/laptop/create',upload).subscribe(res =>{
-    console.log(res);
-  })
-}
+// public postImage(){
+//   const upload= new FormData();
+//   upload.append('image',this.selectedFile!,this.selectedFile!.name)
+//   this.http.post('https://pcfy.redberryinternship.ge/api/laptop/create',upload).subscribe(res =>{
+//     console.log(res);
+//   })
+// }
 
 
   get listError(){
     return (
       // this.myform.get('teamId')?.valid||
       // this.myform.get('teamId')?.dirty ||
-      this.myform.get('teamId')?.markAllAsTouched ||
-      this.myform.get('teamId')?.touched
 
+
+
+      // this.myform.get('teamId')?.markAllAsTouched ||
+      // this.myform.get('teamId')?.touched
+
+      this.formArr.get('myform.teamId')?.markAllAsTouched ||
+      this.myform.get('myform.teamId')?.touched
+      )
+    }
+     get brand(){
+      
+       if(this.formArr.get('secondForm.laptopBrandId')){
+       console.log(  this.formArr.get('secondForm.laptopBrandId'))
+       return this.id=true
+      
+       }
+       return  this.id=false;
+      
+      
+    }
+
+    get Cpu(){
+      if(this.formArr.get('secondForm.laptopCpu')){
+        console.log(this.formArr.get('secondForm.laptopCpu'))
+        return this.id=true;
+      }
+      return this.id=false;
+    }
      
       
       //this.myform.get('teamId')?.errors
-      
-    )
-  }
+    
   // public onSubmit() {
   //   for (let controller in this.myform.controls) {
   //     this.myform.get(controller)?.markAsTouched()
@@ -222,9 +282,9 @@ buttonClick() {
  // this.tabGroup._tabs['_results'][1].disabled = true;
 }
 moveToSelectedTab(tabName: string) {
- 
-      if(this.myform.valid ){
-        console.log(this.myform.valid)
+  console.log(this.formArr.get('myform'))
+      if(this.formArr.get('myform')?.valid ){
+        console.log(this.formArr.get('myform'))
       if ((<HTMLElement>document.querySelectorAll('.mat-tab-label-content')[1]).innerText == tabName) {
         console.log((<HTMLElement>document.querySelectorAll('.mat-tab-label-content')[1]).innerText);
         (<HTMLElement>document.querySelectorAll('.mat-tab-label')[1]).click();
@@ -253,8 +313,42 @@ return this.tabGroup._tabs.toArray()[0].isActive = false;
  
 }
 
+showData(){
+  if(this.formArr.get('myform')?.touched){
+    console.log(this.formArr)
+  }
+}
+
 changeProjectTab() {
   this.selectedProjectIndex = 0;
+}
+
+
+validateForm(formArr:FormGroup){
+  Object.keys(formArr.controls).forEach(field=>{
+    console.log(field);
+    const control=formArr.get(field);
+    if(control instanceof FormControl){
+      control.markAsTouched({onlySelf:true});
+    }else if(control instanceof FormGroup){
+      this.validateForm(control);
+    }
+  })
+
+}
+
+formSubmit(){
+  console.log(this.formArr);
+  if(this.formArr.valid){
+    console.log('ok')
+  }else{
+    this.validateForm(this.formArr)
+  }
+}
+
+postData(){
+  this.service.post(this.formArr.value as data).subscribe();
+  
 }
 
 

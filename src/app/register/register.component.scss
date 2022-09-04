@@ -1,6 +1,11 @@
 body{
     background-color: #EBEBEB;
     height: auto;
+    @media only screen and (min-width: 389px) and (max-width:844px){
+       width: 100%;
+       height: auto;
+
+}
     
     .logo1{
         margin-left: 917px;
@@ -12,9 +17,34 @@ body{
         margin-top: 35px;
         cursor: pointer;
     }
+
+    .ptag{
+        display: none;
+    @media only screen and (min-width: 389px) and (max-width:844px){
+       
+            width: 21px;
+            height: 17px;
+            display: block;
+            font-family: 'Helvetica Neue';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 17px;
+            margin-left: 200px;
+            text-align: center;
+            color: #898989;
+        }
+ }
+
+
 .mat-tab-group{
     margin-top: -25px;
-      
+    
+    @media only screen and (min-width: 389px) and (max-width:844px){
+.mat-tab-header{
+    padding-right: 70px;
+}
+}    
 .form1{
     background-color: white;
     border-radius: 18px;
@@ -30,12 +60,26 @@ body{
         //     border: 2px dashed #4386A9;
         //     border-radius: 18px;
         // }
+
+        @media only screen and (min-width: 389px) and (max-width:844px){
+            width: 100%;
+            height: auto;
+            margin-left: 0px;
+            margin-top: 20px;
+     }
     
     
 div {
     float: left;
     margin-right: 20px;
     margin-top: 50px;
+    @media only screen and (min-width: 389px) and (max-width:844px){
+        margin-left: -195px;
+        float: unset;
+        margin-top: 20px;
+
+        
+    }
     label, input{
         display: block;
         font-family: Roboto, "Helvetica Neue", sans-serif;
@@ -47,9 +91,18 @@ div {
         color:#000000;
     }
 
+.name{
+    @media only screen and (min-width: 389px) and (max-width:844px){
+        
+        padding-top: 30px;
+        
+        
+    }
+}
     
     .name,.name2,.span{
         margin-left: 230px;
+      
         
     }
     .alert{
@@ -80,6 +133,11 @@ div {
     }
     .name4{
         color:#E52F2F ;
+        @media only screen and (min-width: 389px) and (max-width:844px){
+            
+            padding-top: 30px;
+            
+        }
     }
     
     .name3{
@@ -126,6 +184,21 @@ div {
    
 
 }
+@media only screen and (min-width: 389px) and (max-width:844px){
+.surname2{
+  
+    margin-left: 37px;
+  
+   
+}
+}
+
+// .surname2{
+//     @media only screen and (min-width: 389px) and (max-width:844px){
+//     margin-top: 20px;
+//     margin-left: 37px;
+// }
+// }
 .parent{
     overflow: hidden;
 select{
@@ -149,6 +222,12 @@ select{
     border: none;
     margin-bottom: 40px;
     cursor: pointer;
+    @media only screen and (min-width: 389px) and (max-width:844px){
+        width: 335px;
+        height: 60px;
+       
+        background-position-x: 300px;
+    }    
     select::-ms-expand { 
         display: none; 
     }
@@ -176,6 +255,10 @@ select{
     position: relative;
     top: 45%;
     right: 62%;
+    @media only screen and (min-width: 389px) and (max-width:844px){
+        left:10%;
+        top: -20px;
+    }
 }
 .e-mail, #tel{
     width: 690px;
@@ -194,10 +277,21 @@ select{
     align-items: center;
     color: #00000099;
     margin-top: 20px;
+    @media only screen and (min-width: 389px) and (max-width:844px){
+        width: 320px;
+        height: 45px;
+        margin-left: 35px;
+        margin-top: -50px;
+    }
 }
 #tel{
     margin-top: 60px;
     margin-bottom: 5px;
+    @media only screen and (min-width: 389px) and (max-width:844px){
+        margin-left: 35px;
+        width: 320px;
+        margin-top: 20px;
+    }
 }
 .phone2{
     display: block;
@@ -211,14 +305,27 @@ select{
     position: relative;
     left: 19%;
     top: 7%;
+    @media only screen and (min-width: 389px) and (max-width:844px){
+        left: 10%;
+        margin-top: 20px;
+        margin-bottom: -10px;
+    }
 }
 .mailspan{
     position: relative;
     right: 59%;
     top: 5%;
+    @media only screen and (min-width: 389px) and (max-width:844px){
+        right: -8%;
+
+    }
 }
 .phonespan{
     margin-left: 235px;
+    @media only screen and (min-width: 389px) and (max-width:844px){
+        margin-left: 10px;
+    }
+    
 }
 .btn{
     width: 176px;
@@ -235,6 +342,11 @@ select{
     margin-left: 755px;
     margin-top: 100px;
     cursor: pointer;
+    @media only screen and (min-width: 389px) and (max-width:844px){
+        margin-left: 195px;
+        margin-bottom: 50px;
+    }
+
 }
 .btn:hover{
     background: #317AD0;
@@ -258,6 +370,12 @@ select{
     margin-left: 347px;
     margin-top: 20px;
     position: relative;
+    @media only screen and (min-width: 389px) and (max-width:844px){
+            width: 100%;
+            height: auto;
+            margin-left: 0px;
+
+    }
     .upload{
         width:878px;
         height: 423px;
@@ -268,7 +386,22 @@ select{
         margin-top: 68px;
         position: absolute;
         margin-top: 65px;
-       
+        @media only screen and (min-width: 389px) and (max-width:844px){
+            width: 358px;
+            height: 244px;
+            height: 244px;
+            margin-left: 15px;
+
+    }
+       .photo{
+        @media only screen and (min-width: 389px) and (max-width:844px){
+            margin-left: 156px;
+            margin-top: 63px;
+
+
+    }
+       }
+
        
 
         .btn2{
@@ -289,6 +422,9 @@ select{
             margin-left: 322px;
             margin-top: 70px;
             cursor: pointer;
+            @media only screen and (min-width: 389px) and (max-width:844px){
+                display: none;
+            }
 
         }
         .upload2{
@@ -302,6 +438,12 @@ select{
             color: #4386A9;
             margin-left: 340px;
             margin-top: 90px;
+            @media only screen and (min-width: 389px) and (max-width:844px){
+                margin-left: 80px;
+                margin-top: 20px;
+    
+    
+        }
         
         }
        
@@ -309,7 +451,9 @@ select{
     .show{
         margin-top: -298px;
         margin-left: -1px;
-       
+        @media only screen and (min-width: 389px) and (max-width:844px){
+            display: none;
+        }
     
     }
     .shown{
@@ -331,11 +475,21 @@ select{
         position: absolute;
         left: 67%;
         top: 32%;
+        @media only screen and (min-width: 389px) and (max-width:844px){
+            margin-top: -120px;
+            margin-left: -120px;
+        }
+
     }
 .laptop{
     display: inline-block;
     margin-top: 550px;
     margin-left: 170px;
+    position: relative;
+    @media only screen and (min-width: 389px) and (max-width:844px){
+        position: none;
+        margin-left: 25px;
+    }
 
  
     input{
@@ -352,7 +506,17 @@ select{
         line-height: 21px;
         align-items: center;
         color: rgba(0, 0, 0, 0.6);
+        @media only screen and (min-width: 389px) and (max-width:844px){
+            width: 310px;
+            height: 40px;
+        }
     }
+}
+.laptopName{
+    @media only screen and (min-width: 389px) and (max-width:844px){
+       margin-top: -140px;
+    }
+
 }
 
     .hint, .laptopName2, .laptopName{
@@ -602,6 +766,11 @@ select{
         right: 0;
     }
     background-color:#232323 !important;
+    @media only screen and (min-width: 389px) and (max-width:844px){
+        width: 0px !important;
+ 
+ }
+     
 }
 ::ng-deep .mat-tab-label{
     font-size: 20px;
@@ -621,3 +790,18 @@ select{
 ::ng-deep   .mat-ripple.mat-tab-label.mat-focus-indicator.mat-tab-label.ng-star-inserted {
     opacity: 1;
 }
+
+::ng-deep  .mat-tab-label-content{
+@media only screen and (min-width: 389px) and (max-width:844px){
+
+   padding-left: 50px;
+   
+} 
+}
+::ng-deep  .mat-tab-label-0-1{
+    @media only screen and (min-width: 389px) and (max-width:844px){
+    
+       padding-left: -40px;
+       
+    } 
+    }

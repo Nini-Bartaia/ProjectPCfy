@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
-import { brands, cpus, positions, teams } from '../shared/form.interface';
+import { brands, cpus, data, positions, teams } from '../shared/form.interface';
 
 
 @Injectable({
@@ -11,6 +11,7 @@ export class SharedserviceService {
 
 
   private myurl='https://pcfy.redberryinternship.ge/api';
+  
   constructor(private http:HttpClient) { }
 
 
@@ -29,6 +30,9 @@ export class SharedserviceService {
   }
   public getCpu():Observable<cpus[]>{
     return this.http.get<{data:cpus[]}>(this.myurl +'/cpus').pipe(map(res => res.data))
+  }
+  public post(payload:data){
+    return this.http.post(this.myurl+'/laptop/create',payload);
   }
   
 

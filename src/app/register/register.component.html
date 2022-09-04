@@ -1,17 +1,32 @@
 <body>
     
-    <img src="assets/Group 4.png" alt="" routerLink="/landing" class="arrow">
-
-    <mat-tab-group #tabGroup   >
+    <img src="assets/Group 4.png" alt="" routerLink="/landing" class="arrow" *ngIf="!onMobile">
+    <img src="assets/Vector.png" alt=""  routerLink="/landing" *ngIf="onMobile" style="
+    transform: rotate(90deg);
+    vertical-align: bottom;
+    margin-left: 10px;
+    margin-top:45px;">
+    
+<form [formGroup]="formArr">
+    
+    <mat-tab-group #tabGroup>
+       
+       
         <!-- (selectedTabChange)="logChange($event)" [selectedIndex]="active" #tabGroup -->
         <!-- (selectedTabChange)="changeProjectTab()"  [(selectedIndex)]="selectedProjectIndex"  -->
-        <mat-tab label="თანამშრომლის ინფო">
+        
+        <mat-tab label="თანამშრომლის ინფო" class="tab1">
+           
+            <p *ngIf="onSubmit" class="ptag" >1/2</p>
+            
             <!-- [ngStyle]="{'display': selectedProjectIndex === 0 ? 'block' : 'none'}" -->
-            <form [formGroup]="myform" class="form1"  >
+            <form  class="form1" formGroupName="myform" >
+                <!-- [formGroup]="myform" -->
                 <div class="form-group"  >
                 <!-- <label for="name" class="name">სახელი</label>
                 <input type="text" id="name" formControlName="name" placeholder="გრიშა" class="name2" > -->
-                <span *ngIf="myform.get('name')?.untouched || myform.get('name')?.valid ; then show; else error"></span>
+                <span *ngIf="formArr.get('myform.name')?.untouched || formArr.get('myform.name')?.valid ; then show;else error" ></span>
+                <!-- *ngIf="myform.get('name')?.untouched || myform.get('name')?.valid ; then show; else error" -->
                 <ng-template #show>
                     
                     <label for="name" class="name">სახელი</label>
@@ -22,14 +37,16 @@
                 
                 <label for="name" class="name2 name4" >სახელი</label>
                 <input type="text" id="name" formControlName="name" placeholder="გრიშა" class="name3" >
-                <span class="alert" *ngIf="myform.get('name')?.touched && myform.get('name')?.invalid">გამოიყენე ქართული ასოები</span>
+                <span class="alert" *ngIf="formArr.get('myform.name')?.touched && formArr.get('myform.name')?.invalid" >გამოიყენე ქართული ასოები</span>
+                <!-- *ngIf="myform.get('name')?.touched && myform.get('name')?.invalid" -->
             </ng-template>
                 </div>
-                <div>
+                <div class="surname2">
                 <!-- <label for="surname">გვარი</label>
                 <input type="text" id="surname" formControlName="surname" placeholder="ბაგრატიონი">
                 <span>მინიმუმ 2 სიმბოლო, ქართული ასოები</span> -->
-                <span *ngIf="myform.get('surname')?.untouched || myform.get('surname')?.valid ; then showsurname; else errorsurname"></span>
+                <span  *ngIf="formArr.get('myform.surname')?.untouched || formArr.get('myform.surname')?.valid ; then showsurname;else errorsurname" ></span>
+                <!-- *ngIf="myform.get('surname')?.untouched || myform.get('surname')?.valid ; then showsurname; else errorsurname" -->
 
                 <ng-template #showsurname>
                 <label for="surname">გვარი</label>
@@ -39,9 +56,11 @@
 
                 <ng-template #errorsurname>
                     
-                        <label for="surname" class="name4">გვარი</label>
+                        <label for="surname" class="name4" *ngIf="!onMobile">გვარი</label>
+                        <label for="surname" class="name4" style="margin-top:-30px" *ngIf="onMobile">გვარი</label>
                         <input type="text" id="surname" formControlName="surname" placeholder="ბაგრატიონი" class="surname">
-                        <span class="alert3" *ngIf="myform.get('surname')?.touched && myform.get('surname')?.invalid">გამოიყენე ქართული ასოები</span>
+                        <span class="alert3" *ngIf="formArr.get('myform.surname')?.touched && formArr.get('myform.surname')?.invalid" >გამოიყენე ქართული ასოები</span>
+                        <!-- *ngIf="myform.get('surname')?.touched && myform.get('surname')?.invalid" -->
                 </ng-template>
                 </div>
                
@@ -82,7 +101,8 @@
                 </div> -->
                 <!-- <span *ngIf="listError" class="danger"> sheiyvane</span> -->
 
-                <span *ngIf="myform.get('email')?.untouched || myform.get('email')?.valid ; then showemail; else erroremail"></span>
+                <span *ngIf="formArr.get('myform.email')?.untouched || formArr.get('myform.email')?.valid ; then showemail;else erroremail"></span>
+                <!-- *ngIf="myform.get('email')?.untouched || myform.get('email')?.valid ; then showemail; else erroremail" -->
                 <ng-template #showemail>
                     <label for="mail" class="email">მეილი</label>
                     <input type="email" id="mail" class="e-mail" formControlName="email" placeholder="grish666@redberry.ge">
@@ -93,16 +113,19 @@
                     <input type="email" id="mail" class="e-mail" formControlName="email" placeholder="grish666@redberry.ge" style="border-color:#E52F2F ;">
                     <span class="mailspan" style="color:#E52F2F">უნდა მთავრდებოდეს @redberry.ge-ით</span>
                 </ng-template>
-                <span *ngIf="myform.get('phone')?.untouched || myform.get('phone')?.valid ; then showphone; else errorphone"></span>
+                <span *ngIf="formArr.get('myform.phone')?.untouched || formArr.get('myform.phone')?.valid ; then showphone;else errorphone"></span>
+                <!-- *ngIf="myform.get('phone')?.untouched || myform.get('phone')?.valid ; then showphone; else errorphone" -->
                 <ng-template #showphone>
                     <label for="tel" class="phone2">ტელეფონის ნომერი</label>
                     <input type="tel" id="tel" formControlName="phone" placeholder="+995 598 00 07 01">
-                    <span class="phonespan">უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს</span>
+                    <span class="phonespan" *ngIf="!onMobile" >უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს</span>
+                    <span style="margin-left: 35px;" *ngIf="onMobile">ქართული მობ-ნომრის ფორმატი</span>
                 </ng-template>
                 <ng-template #errorphone>
                     <label for="tel" class="phone2" style="color:#E52F2F" >ტელეფონის ნომერი</label>
                     <input type="tel" id="tel" formControlName="phone" placeholder="+995 598 00 07 01" style="border-color:#E52F2F ;">
-                    <span class="phonespan" style="color:#E52F2F">უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს</span>
+                    <span class="phonespan" style="color:#E52F2F" *ngIf="!onMobile">უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს</span>
+                    <span style="margin-left: 35px;" *ngIf="onMobile">ქართული მობ-ნომრის ფორმატი</span>
                 </ng-template>
 
                     <button type="submit" class="btn"tabindex="-1" (click)='moveToSelectedTab("ლეპტოპის მახასიათებლები")'>შემდეგი</button>
@@ -118,63 +141,154 @@
                 
             </form >
             <img src="/assets/LOGO-10 2.png" alt="" class="logo1">
-    
-</mat-tab>
-    <mat-tab label="ლეპტოპის მახასიათებლები">
-        <form action="" class="form2" [formGroup]="secondForm" >
        
-        <div class="upload">
+</mat-tab>
 
-            <p class="upload2">ჩააგდე ან ატვირთე ლეპტოპის ფოტო</p>
-            <button class="btn2"  onclick="document.getElementById('getFile').click()" >ატვირთე</button>
-                <img  [src]="url" alt="" class="upload show" *ngIf="url"  > 
-            <input type='file' id="getFile" style="display:none" formControlName="laptopImage" (change)="getFile($event)" (change)="changeImage($event)">
-        
+    <mat-tab label="ლეპტოპის მახასიათებლები">
+        <p *ngIf="onSubmit" class="ptag" >2/2</p>
+        <form action="" class="form2" formGroupName="secondForm">
+            <!-- [formGroup]="secondForm" -->
+        <div class="upload" *ngIf="!url; else showerror">
+
+            <p class="upload2" *ngIf="!onMobile">ჩააგდე ან ატვირთე ლეპტოპის ფოტო</p>
+            <img src="assets/photo.png" alt=""  onclick="document.getElementById('getFile').click()" *ngIf="onMobile" class="photo">
+            <p class="upload2" *ngIf="onMobile">ლეპტოპის ფოტოს &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ატვირთვა</p>
+            <img  [src]="url" alt="" class="upload show" *ngIf="url && onMobile"  > 
             
+            <button class="btn2"  onclick="document.getElementById('getFile').click()" *ngIf="!onMobile">ატვირთე</button>
+                <img  [src]="url" alt="" class="upload show" *ngIf="url && !onMobile"  > 
+            <input type='file' id="getFile" style="display:none" formControlName="laptopImage" (change)="getFile($event)" (change)="changeImage($event)" >
+    
         </div>
-        <button *ngIf="url;then button">თავიდან ატვირთე</button>
+
+       
+
+        <ng-template #showerror>
+            <div class="upload" style="border: 2px dashed #E52F2F;background: #FFF1F1 ;">
+
+                <p class="upload2" style="color: #E52F2F;" *ngIf="!onMobile">ჩააგდე ან ატვირთე ლეპტოპის ფოტო</p>
+                <img src="assets/photo.png" alt=""  onclick="document.getElementById('getFile').click()" *ngIf="onMobile" class="photo">
+                <p class="upload2" *ngIf="onMobile" >ლეპტოპის ფოტოს &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ატვირთვა</p>
+                <img src="assets.Vector2.png" alt="" *ngIf="onMobile">
+
+                <button class="btn2"  onclick="document.getElementById('getFile').click()"  >ატვირთე</button>
+                    <img  [src]="url" alt="" class="upload show" *ngIf="url"  > 
+                <input type='file' id="getFile" style="display:none" formControlName="laptopImage" (change)="getFile($event)" (change)="changeImage($event)">
+        
+            </div>
+        </ng-template>
+        <!-- <button *ngIf="url;then button">თავიდან ატვირთე</button> -->
+        <button *ngIf="url; then button">თავიდან ატვირთე</button>
+               
         <ng-template #button >
-        <button class="shown">თავიდან ატვირთე</button>
+        <!-- <button class="shown">თავიდან ატვირთე</button> -->
+
+        <button  class="shown" onclick="document.getElementById('getFile').click()">თავიდან ატვირთე</button>
+                <img  [src]="url" alt="" class="upload " *ngIf="url"  > 
+            <input type='file' id="getFile" style="display:none"  (change)="getFile($event)" (change)="changeImage($event)">
     </ng-template>
-      
-<div class="laptop">
-        <label for="lapname" class="laptopName">ლეპტოპის სახელი</label>
-        <input type="text" id="lapname"  placeholder="HP" class="laptopName2" formControlName="laptopName"  >
+    <!-- <span *ngIf="formArr.get('secondForm.laptopName')?.untouched || formArr.get('secondForm.laptopName')?.valid ; then show;else error" ></span>
+    <ng-template #show>
+    </ng-template> -->
+    <div class="laptop" *ngIf="formArr.get('secondForm.laptopName')?.untouched || formArr.get('secondForm.laptopName')?.valid ; else laptop">
+        <label for="cpu" class="laptopName">ლეპტოპის სახელი</label>
+        <input type="text" id="cpu"  placeholder="HP"  formControlName="laptopName"  >
         <span  class="hint">ლათინური ასოები, ციფრები, !@#$%^&*()_+= </span>
     </div>
+
+<ng-template #laptop>
+    <div class="laptop" >
+        <label for="cpu" class="laptopName" style="color: #E52F2F;">ლეპტოპის სახელი</label>
+        <input type="text" id="cpu"  placeholder="HP"  formControlName="laptopName" style="border-color:#E52F2F ;" >
+        <span style="color:#E52F2F" class="hint" *ngIf="formArr.get('secondForm.laptopName')?.touched && formArr.get('secondForm.laptopName')?.invalid">ლათინური ასოები, ციფრები, !@#$%^&*()_+= </span>
+    </div>
+</ng-template>
+
 <div class="parent2">
-    <select (change)="selectList3($event)" class="brand">
+   
+    <!-- *ngIf="id; else brand"  -->
+    <!-- (click)="brand" -->
+
+    <select (change)="selectList3($event)" class="brand"  *ngIf="formArr.get('secondForm.laptopBrandId')?.hasError('required') && formArr.get('secondForm.laptopBrandId')?.hasError('invalidValue') && formArr.get('secondForm.laptopBrandId')?.invalid;  else brand"  >
         <option selected disabled hidden >ლეპტოპის ბრენდი</option>
         <option [value]="val.id" *ngFor="let val of brands" >
             {{val.name}}
         </option>
-    </select>
+    </select >
+
+   
+    <ng-template #brand>
+        <select (change)="selectList3($event)" class="brand " style="border: 2px solid red;" >
+            <option selected disabled hidden >ლეპტოპის ბრენდი</option>
+            <option [value]="val.id" *ngFor="let val of brands" >
+                {{val.name}}
+            </option>
+        </select>
+    </ng-template>
 
     <hr>
-    <select (change)="selectList4($event)" class="brand brand2">
-        <option selected disabled hidden >CPU</option>
-        <option [value]="val.id" *ngFor="let val of cpus" >
-            {{val.name}}
-        </option>
-    </select>
-    <div class="div">
+    <!-- (click)="Cpu" *ngIf="id; else brand2" -->
+   
+        <select  (change)="selectList4($event)" class="brand brand2" *ngIf="formArr.get('secondForm.laptopCpu')?.hasError('required') && formArr.get('secondForm.laptopCpu')?.hasError('invalidValue') && formArr.get('secondForm.laptopCpu')?.invalid;  else brand2"  >
+            <option selected disabled hidden >CPU</option>
+            <option [value]="val.id" *ngFor="let val of cpus" >
+                {{val.name}}
+            </option>
+        </select>
+
+        <ng-template #brand2>
+            <select  (change)="selectList4($event)" class="brand brand2" style=" border: 2px solid #E52F2F;">
+                <option selected disabled hidden >CPU</option>
+                <option [value]="val.id" *ngFor="let val of cpus" >
+                    {{val.name}}
+                </option>
+            </select>
+        </ng-template>
+
+    
+    <div class="div" *ngIf="formArr.get('secondForm.laptopCpuCores')?.untouched || formArr.get('secondForm.laptopCpuCores')?.valid ; else div">
         <label for="cpu" class="laptopName">CPU-ს ბირთვი</label>
         <input type="text" id="cpu"  placeholder="14" class="cpuname2" formControlName="laptopCpuCores">
         <span  class="hint2">მხოლოდ ციფრები</span>
     </div>
-    <div class="div2">
+
+    <ng-template #div>
+        <div class="div" >
+            <label for="cpu" class="laptopName" style="color: #E52F2F;">CPU-ს ბირთვი</label>
+            <input type="text" id="cpu"  placeholder="14" class="cpuname2" formControlName="laptopCpuCores"  style="border-color:#E52F2F ;">
+            <span  class="hint2" style="color:#E52F2F">მხოლოდ ციფრები</span>
+        </div>
+    </ng-template>
+    <div class="div2" *ngIf="formArr.get('secondForm.laptopCpuThreads')?.untouched || formArr.get('secondForm.laptopCpuThreads')?.valid ; else div2">
         <label for="cpu" class="laptopName">CPU-ს ნაკადი</label>
         <input type="text" id="cpu"  placeholder="365" class="thread" formControlName="laptopCpuThreads">
         <span  class="hint3">მხოლოდ ციფრები</span>
     
     </div>
+    <ng-template #div2>
+        <div class="div2" >
+            <label for="cpu" class="laptopName"style="color: #E52F2F;">CPU-ს ნაკადი</label>
+            <input type="text" id="cpu"  placeholder="365" class="thread" formControlName="laptopCpuThreads" style="border-color:#E52F2F ;">
+            <span  class="hint3" style="color:#E52F2F">მხოლოდ ციფრები</span>
+        
+        </div>
+    </ng-template>
 
-    <div class="div2 div3">
+    <div class="div2 div3" *ngIf="formArr.get('secondForm.laptopRam')?.untouched || formArr.get('secondForm.laptopRam')?.valid ; else div3">
         <label for="cpu" class="laptopName">ლეპტოპის RAM(GB)</label>
         <input type="text" id="cpu"  placeholder="16" class="thread thread2" formControlName="laptopRam">
         <span  class="hint3 hint4">მხოლოდ ციფრები</span>
     
     </div>
+
+    <ng-template #div3>
+        <div class="div2 div3" >
+            <label for="cpu" class="laptopName" style="color: #E52F2F;">ლეპტოპის RAM(GB)</label>
+            <input type="text" id="cpu"  placeholder="16" class="thread thread2" formControlName="laptopRam" style="border-color:#E52F2F ;">
+            <span  class="hint3 hint4" style="color:#E52F2F">მხოლოდ ციფრები</span>
+        
+        </div>
+    </ng-template>
     <div class="radio">
         <p>მეხსიერების ტიპი</p>
         <input type="radio" id="ssd" formControlName="laptopHardDriveType" >
@@ -184,19 +298,37 @@
     </div>
 
     <hr class="line">
-<div class="div2 div3 div4" >
+<div class="div2 div3 div4" *ngIf="formArr.get('secondForm.laptopPurchaseDate')?.untouched || formArr.get('secondForm.laptopPurchaseDate')?.valid ; else div4" >
     <label for="cpu" class="laptopName">შეძენის რიცხვი(არჩევითი)</label>
     <input type="text" id="cpu"  placeholder="დდ/თთ/წწწწ" class="thread thread2"  onfocus="(this.type='date')" 
     onblur="(this.type='text')" formControlName="laptopPurchaseDate">
     
 
 </div>
-<div class="div2 div3 wrapper2">
+
+<ng-template #div4>
+    <div class="div2 div3 div4"  >
+        <label for="cpu" class="laptopName"  style="color: #E52F2F;">შეძენის რიცხვი(არჩევითი)</label>
+        <input type="text" id="cpu"  placeholder="დდ/თთ/წწწწ" class="thread thread2"  onfocus="(this.type='date')" 
+        onblur="(this.type='text')" formControlName="laptopPurchaseDate"  style="border-color:#E52F2F ;">
+        
+    
+    </div>
+</ng-template>
+<div class="div2 div3 wrapper2" *ngIf="formArr.get('secondForm.laptopPrice')?.untouched || formArr.get('secondForm.laptopPrice')?.valid ; else wrapper2" >
     <label for="cpu" class="laptopName">ლეპტოპის ფასი</label>
     <input type="text" id="cpu"  placeholder="0000" class="thread thread2 thread3" formControlName="laptopPrice"> 
     <span  class="hint3 hint4">მხოლოდ ციფრები</span>
 
 </div>
+<ng-template #wrapper2>
+    <div class="div2 div3 wrapper2"  >
+        <label for="cpu" class="laptopName"  style="color: #E52F2F;">ლეპტოპის ფასი</label>
+        <input type="text" id="cpu"  placeholder="0000" class="thread thread2 thread3" formControlName="laptopPrice" style="border-color:#E52F2F ;"> 
+        <span  class="hint3 hint4"  style="color: #E52F2F;">მხოლოდ ციფრები</span>
+    
+    </div>
+</ng-template>
 <div class="radio radio2">
     <p>ლეპტოპის მდგომარეობა</p>
     <input type="radio" id="state" formControlName="laptopState" >
@@ -207,7 +339,11 @@
 </div>
 
 <p class="back" (click)='moveToSelectedTab2("თანამშრომლის ინფო")'>უკან</p>
-<button type="submit" class="submit" (click)="postImage()">დამახსოვრება</button>
+<button type="button" class="submit"  (click)="formSubmit()" (click)="postData()" >დამახსოვრება</button> 
+<!-- 
+(click)="postData()" -->
+
+
 <!-- <hr>
 <div class="div2 div3">
     <label for="cpu" class="laptopName">ლეპტოპის RAM(GB)</label>
@@ -222,8 +358,9 @@
         </form>
         <img src="assets/LOGO-10 2.png" alt="">
     </mat-tab>
-    
+
 </mat-tab-group>
+</form>
 
 
 </body>
