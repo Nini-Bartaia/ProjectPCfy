@@ -70,26 +70,25 @@ export interface cpus{
 
 export interface data{
     
-        name:String,
-        surname:String,
-        teamId:Number,
-        positionId:Number,
-        email: String,
-        phone:String,
-        token:'6d8e33bcc7d765da654c61de1d4151af'
-        
-    
-    laptopName:String,
-    laptopImage:String,
-    laptopBrandId:String,
-    laptopCpu:String,
-    laptopCpuCores:Number,
-    laptopCpuThreads:Number,
-    laptopRam:Number,
-    laptopHardDriveType:String,
-    laptopState:String,
-    laptopPurchaseDate:String,
-    laptopPrice:Number
+    name:String,
+    surname:String,
+    team_id:Number,
+    position_id:Number,
+    email: String,
+    phone_number:String,
+    token:'6d8e33bcc7d765da654c61de1d4151af',
+    laptop_name:String,
+    laptop_image:String,
+    laptop_brand_id:String,
+    laptop_cpu:String,
+    laptop_cpu_cores:Number,
+    laptop_cpu_threads:Number,
+    laptop_ram:Number,
+    laptop_hard_drive_type:String,
+    laptop_state:String,
+    laptop_purchase_date:String,
+    laptop_price:Number
+
 }
     
 

@@ -1,0 +1,20 @@
+<body>
+    <img src="assets/Group 4.png" alt="" routerLink="/landing" class="arrow">
+    <span>ჩანაწერების სია</span>
+
+
+    <ul class="div" *ngFor="let user in usersData">
+        <div>
+            {{user.laptop_image}}
+        </div>
+
+        <span>{{user.name}}</span>
+        <span>{{user.laptop_name}}</span>
+        <a href="">მეტის ნახვა</a>
+    </ul>
+    
+
+</body>
+
+
+

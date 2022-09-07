@@ -1,0 +1,48 @@
+{
+  "users": [
+    {
+      "name": "ნინი",
+      "surname": "ბართაია",
+      "team_id": "1",
+      "position_id": "2",
+      "email": "nini@redberry.ge",
+      "phone_number": "+995555121212",
+      "laptop_name": "hp",
+      "laptop_image": "C:\\fakepath\\1511194376-cavachon-puppy-christmas.jpg",
+      "laptop_brand_id": "3",
+      "laptop_cpu": "6",
+      "laptop_cpu_cores": "65",
+      "laptop_cpu_threads": "878",
+      "laptop_ram": "545",
+      "laptop_hard_drive_type": "SSD",
+      "laptop_state": "used",
+      "laptop_purchase_date": "2022-09-07",
+      "laptop_price": "7657",
+      "token": "6d8e33bcc7d765da654c61de1d4151af",
+      "id": 1
+    },
+    {
+      "name": "ნინი",
+      "surname": "სჯბჯდს",
+      "team_id": "1",
+      "position_id": "2",
+      "email": "nini@redberry.ge",
+      "phone_number": "+995555676767",
+      "laptop_name": "ho",
+      "laptop_image": "",
+      "laptop_brand_id": "1",
+      "laptop_cpu": "6",
+      "laptop_cpu_cores": "656",
+      "laptop_cpu_threads": "878",
+      "laptop_ram": "767",
+      "laptop_hard_drive_type": "HDD",
+      "laptop_state": "used",
+      "laptop_purchase_date": "2022-09-07",
+      "laptop_price": "8767",
+      "token": "6d8e33bcc7d765da654c61de1d4151af",
+      "id": 2
+    }
+    
+    
+  ]
+}

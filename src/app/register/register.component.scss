@@ -37,7 +37,7 @@ body{
  }
 
 
-.mat-tab-group{
+
     margin-top: -25px;
     
     @media only screen and (min-width: 389px) and (max-width:844px){
@@ -68,7 +68,9 @@ body{
             margin-top: 20px;
      }
     
-    
+     .teamwrapper{
+        border: 2px solid red;
+    }
 div {
     float: left;
     margin-right: 20px;
@@ -131,6 +133,8 @@ div {
         font-size: 14px;
         line-height: 21px;
     }
+
+   
     .name4{
         color:#E52F2F ;
         @media only screen and (min-width: 389px) and (max-width:844px){
@@ -360,7 +364,7 @@ select{
 }
 
 
-}
+
 
 .form2{
     background-color: white;
@@ -372,7 +376,7 @@ select{
     position: relative;
     @media only screen and (min-width: 389px) and (max-width:844px){
             width: 100%;
-            height: auto;
+            height: 1850px;
             margin-left: 0px;
 
     }
@@ -514,11 +518,25 @@ select{
 }
 .laptopName{
     @media only screen and (min-width: 389px) and (max-width:844px){
-       margin-top: -140px;
+       margin-top: -180px;
     }
 
 }
-
+.Name5{
+    @media only screen and (min-width: 389px) and (max-width:844px){
+        margin-left: -130px;
+     }
+}
+.hint{
+    @media only screen and (min-width: 389px) and (max-width:844px){
+        font-family: 'Helvetica Neue';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        color: #2E2E2E;
+        line-height: 21px;
+    }
+}
     .hint, .laptopName2, .laptopName{
         display: block;
     font-family: Roboto, "Helvetica Neue", sans-serif;
@@ -530,6 +548,42 @@ select{
     color: #000000;
 
     }
+.laptopName{
+    @media only screen and (min-width: 389px) and (max-width:844px){
+        //margin-left: -440px;
+        margin-left: -750px;
+        margin-top: 150px;
+    //     margin-left: -440px;
+    // margin-top: 150px;
+        // margin-top: 150px;
+        //margin-top: 500px;
+    }
+}
+.Name6{
+    @media only screen and (min-width: 389px) and (max-width:844px){
+        margin-left: 0px;
+    margin-top: -200px;
+    }
+}
+.Name7{
+    @media only screen and (min-width: 389px) and (max-width:844px){
+        margin-left: -440px;
+        margin-top: -130px;
+    }
+
+}
+.Name8{
+    @media only screen and (min-width: 389px) and (max-width:844px){
+        margin-top: -180px;
+        margin-left: 0px;
+    }
+}
+.Name9{
+    @media only screen and (min-width: 389px) and (max-width:844px){
+        margin-left: 136px;
+        margin-top: -50px;
+    }
+}
     .parent2{
        // overflow: hidden;
         margin-top: -80px;
@@ -555,6 +609,13 @@ select{
     border: none;
     margin-bottom: 40px;
     cursor: pointer;
+    @media only screen and (min-width: 389px) and (max-width:844px){
+        margin-left: 20px;
+        margin-top: 40px;
+        width: 335px;
+        background-position-x: 300px;
+        margin-bottom: 0px;
+    }
     .brand::-ms-expand { 
         display: none; 
     }
@@ -567,6 +628,14 @@ select{
     margin-top: 80px;
     margin-right: 40px;
     background-position-x: 240px;
+    @media only screen and (min-width: 389px) and (max-width:844px){
+        border: 2px solid #E52F2F;
+        margin-top: 20px;
+        width: 335px;
+        margin-left: 20px;
+        background-position-x: 300px;
+    }
+
     }
    
     hr{
@@ -574,10 +643,19 @@ select{
         height: 0px;
         width: 900px;
         margin-top: 50px;
+        @media only screen and (min-width: 389px) and (max-width:844px){
+            height: 8px;
+            background: #ebebeb;
+
+        }
+
     }
     .div{
         margin-left: 460px;
         margin-top: -130px;
+        @media only screen and (min-width: 389px) and (max-width:844px){
+            margin-top: 200px;
+        }
     .hint2{
         display: block;
         font-family: Roboto, "Helvetica Neue", sans-serif;
@@ -588,6 +666,9 @@ select{
         line-height: 21px;
         color: #000000;
         margin-top: 10px;
+        @media only screen and (min-width: 389px) and (max-width:844px){
+            margin-left: -440px;
+        }
     }
     
 .cpuname2{
@@ -604,6 +685,14 @@ select{
     line-height: 21px;
     align-items: center;
     color: rgba(0, 0, 0, 0.6);
+    @media only screen and (min-width: 389px) and (max-width:844px){
+        margin-left: -440px;
+        width: 320px;
+        height: 45px;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+    }
 
 }
     }
@@ -626,6 +715,12 @@ select{
         line-height: 21px;
         align-items: center;
         color: rgba(0, 0, 0, 0.6);
+        @media only screen and (min-width: 389px) and (max-width:844px){
+            margin-left: -750px;
+            width: 320px;
+            height: 45px;
+            
+        }
     }
     .hint3{
         display: block;
@@ -637,6 +732,16 @@ select{
         line-height: 21px;
         color: #000000;
         margin-top: 10px;
+        @media only screen and (min-width: 389px) and (max-width:844px){
+            margin-left: -750px;
+        }
+    }
+
+    .Hint1{
+        @media only screen and (min-width: 389px) and (max-width:844px){
+            margin-top: 20px;
+            margin-left: 145px;
+        }
     }
 }
 .div3{
@@ -645,9 +750,25 @@ select{
     margin-left: 160px;
     // width: 408px;
     // height: 60px;
+    @media only screen and (min-width: 389px) and (max-width:844px){
+        width: 310px;
+        height: 55px;
+        margin-left: -130px;
+    }
     .thread2{
         width: 408px;
         height: 60px;
+       
+    }
+
+    .thread4{
+        @media only screen and (min-width: 389px) and (max-width:844px){
+            //margin-top: 600px; 
+            width: 320px;
+            height: 45px;
+            margin-left: 150px;
+            
+        }
     }
 
 }
@@ -667,11 +788,88 @@ select{
     //    border: 2px solid red;
         
     // }
+
+    .paragraph{
+        @media only screen and (min-width: 389px) and (max-width:844px){
+            margin-left: -680px;
+            margin-top: 180px;
+            font-family: 'Helvetica Neue';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 21px;
+            color: #000000;
+        }
+
+
+    }
+    .paragraph + input{
+        @media only screen and (min-width: 389px) and (max-width:844px){
+            margin-left: -680px;
+            margin-top: 20px;
+
+        }
+    }
+    .paragraph + input +label{
+        @media only screen and (min-width: 389px) and (max-width:844px){
+            font-family: 'Helvetica Neue';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 21px;
+            color: #000000;
+        }
+    }
+
+    .hdd{
+        font-family: 'Helvetica Neue';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21px;
+        color: #000000;
+    
+    }
+    
     
 }
+
 .line{
        
     margin-top: 100px;
+}
+.date2{
+    @media only screen and (min-width: 389px) and (max-width:844px){
+    margin-left: 150px;
+    margin-top: -20px;
+    position: absolute;
+    }
+}
+#input2{
+    @media only screen and (min-width: 389px) and (max-width:844px){
+    width: 320px;
+    margin-top: 20px;
+    height: 45px;
+    margin-left: 150px;
+    }
+}
+
+.price{
+    @media only screen and (min-width: 389px) and (max-width:844px){
+    margin-left: -620px;
+    }
+}
+#price1{
+    @media only screen and (min-width: 389px) and (max-width:844px){
+    width: 320px;
+    height: 45px;
+    margin-left: -620px;
+    }
+}
+#price1 +.hint5{
+    @media only screen and (min-width: 389px) and (max-width:844px){
+        margin-left: -620px;
+    }
 }
 .div4{
     margin-top: 50px;
@@ -696,6 +894,46 @@ select{
     margin-left: 160px;
     margin-top: 40px;
 
+
+    .paragraph2{
+        @media only screen and (min-width: 389px) and (max-width:844px){
+        font-family: 'Helvetica Neue';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21px;
+        color: #000000;
+        margin-left: -130px;
+        margin-top: 80px;
+    }
+}
+
+.paragraph2 + input{
+    @media only screen and (min-width: 389px) and (max-width:844px){
+        margin-left: -125px;
+        margin-top: 15px;
+    }
+}
+.paragraph2 + input + label{
+    @media only screen and (min-width: 389px) and (max-width:844px){
+        font-family: 'Helvetica Neue';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21px;
+        color: #000000;
+    }
+}
+
+.paragraph2 + input + label +input + label{
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    color: #000000;
+}
+
 }
 
 
@@ -712,6 +950,10 @@ select{
     margin-left: 160px;
     margin-top: 70px;
     cursor: pointer;
+    @media only screen and (min-width: 389px) and (max-width:844px){
+        margin-left: 30px;
+    }
+
 
 }
 .submit{
@@ -732,6 +974,9 @@ select{
     margin-left: 845px;
     margin-top: -60px;
     cursor: pointer;
+    @media only screen and (min-width: 389px) and (max-width:844px){
+        margin-left: 130px;
+    }
 }
 
     }

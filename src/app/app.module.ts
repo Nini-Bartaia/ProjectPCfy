@@ -13,16 +13,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { state, style, transition, trigger, animate } from "@angular/animations";
 import {MatMenuModule} from '@angular/material/menu'
 import {MatIconModule} from '@angular/material/icon'
+import { TokenInterceptorService } from './shared/token-interceptor.service';
 
-
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SuccessComponent } from './success/success.component';
+import { UserslistModule } from './userslist/userslist.module';
+
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
     RegisterComponent,
-    SuccessComponent
+    SuccessComponent,
+   
+    
   ],
   imports: [
     BrowserModule,
@@ -36,11 +40,17 @@ import { SuccessComponent } from './success/success.component';
     BrowserAnimationsModule,
     MatMenuModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    UserslistModule
+    
     
     
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass:TokenInterceptorService,
+    multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
