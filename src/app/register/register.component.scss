@@ -390,11 +390,23 @@ select{
         margin-top: 68px;
         position: absolute;
         margin-top: 65px;
+        .landing{
+            width: 700px;
+            height: 420px;
+            margin-left: 100px;
+            @media only screen and (min-width: 389px) and (max-width:844px){
+                width: 350px;
+                height: 250px;
+                margin-left: 5px;
+
+            }
+        }
         @media only screen and (min-width: 389px) and (max-width:844px){
             width: 358px;
             height: 244px;
             height: 244px;
             margin-left: 15px;
+           
 
     }
        .photo{

@@ -47,7 +47,7 @@ export class SharedserviceService {
   }
 
   public getUsers():Observable<data[]>{
-    return this.http.get<{data:data[]}>(this.postApi+'/users').pipe(map(res =>{ return res.data}));
+    return this.http.get<data[]>(this.postApi+'/users');
    
   }
 

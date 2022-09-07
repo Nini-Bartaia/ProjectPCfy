@@ -4,6 +4,10 @@ body{
     img{
         margin-left: 20px;
         margin-top: 20px;
+        @media only screen and (min-width: 389px) and (max-width:844px){
+            width: 35px;
+            margin-right: 15px;
+        }
     }
     img+ span{
         margin-left: 45%;
@@ -13,7 +17,20 @@ body{
         font-size: 34px;
         line-height: 21px;
         text-align: center;
+        @media only screen and (min-width: 389px) and (max-width:844px){
+            margin-left: 0px;
+        }
     }
+    .example-card {
+        max-width: 400px;
+        margin-bottom: 8px;
+        margin-left: 500px;
+        margin-top: 40px;
+        @media only screen and (min-width: 389px) and (max-width:844px){
+            margin-left: 0px;
+        }
+      }
+      
     .div{
         width: 563px;
         height: 205px;

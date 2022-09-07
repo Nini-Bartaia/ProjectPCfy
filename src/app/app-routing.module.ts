@@ -6,7 +6,7 @@ import { RegisterComponent } from './register/register.component';
 import { SuccessComponent } from './success/success.component';
 
 const routes: Routes = [{
-  path:'', component: AppComponent
+  path:'', redirectTo:"landing", pathMatch:"full"
 },
 {
   path:'register', component:RegisterComponent
@@ -22,6 +22,10 @@ const routes: Routes = [{
 {
   path:'success', component:SuccessComponent
 },
+{
+  path:'login/logincomp',
+  loadChildren:()=>import('src/app/login/login.module').then((m)=>m.LoginModule)
+}
 
 ];
 

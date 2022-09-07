@@ -3,15 +3,28 @@
     <span>ჩანაწერების სია</span>
 
 
-    <ul class="div" *ngFor="let user in usersData">
+    <!-- <div class="div" >
+        <ng-container *ngFor="let user in usersData">
         <div>
-            {{user.laptop_image}}
+           <img src="" alt="">
         </div>
 
         <span>{{user.name}}</span>
         <span>{{user.laptop_name}}</span>
         <a href="">მეტის ნახვა</a>
-    </ul>
+    </ng-container>
+    </div> -->
+    <mat-card class="example-card"*ngFor="let user of usersData" >
+        <mat-card-title-group >
+          <mat-card-title>{{user.name}} {{user.surname}}</mat-card-title>
+          <mat-card-subtitle>{{user.laptop_name}}</mat-card-subtitle>
+          
+        </mat-card-title-group>
+        <mat-card-content>
+            <a href="">მეტის ნახვა</a>
+        </mat-card-content>
+      </mat-card>
+
     
 
 </body>

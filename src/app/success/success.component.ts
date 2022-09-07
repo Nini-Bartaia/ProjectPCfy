@@ -16,7 +16,9 @@ export class SuccessComponent implements OnInit {
   
   }
 
-
+navigate(){
+  this.route.navigate(['list'])
+}
 
 }
 

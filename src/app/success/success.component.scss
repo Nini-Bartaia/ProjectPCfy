@@ -1,16 +1,23 @@
 body{
-    background: #4A4A4A;
+    background: white;
     display: flex;
     justify-content: center;
     align-items: center;
+   
     .div{
     width: 847px;
     height: 537px;
     background: #FFFFFF;
     border-radius: 8px;
+    @media only screen and (min-width: 389px) and (max-width:844px){
+        width: 500px;
+    }
     img{
         margin-left: 320px;
         margin-top: 40px;
+        @media only screen and (min-width: 389px) and (max-width:844px){
+            margin-left: 100px;
+        }
     }
     p{
         font-family: 'Helvetica Neue';
@@ -37,6 +44,9 @@ body{
     color: #FFFFFF;
     border: none;
     cursor: pointer;
+    @media only screen and (min-width: 389px) and (max-width:844px){
+        margin-left: 50px;
+    }
 
     }
     button +p{

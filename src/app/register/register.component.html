@@ -11,24 +11,19 @@
     
     <mat-tab-group #tabGroup >
        
-       
-        <!-- (selectedTabChange)="logChange($event)" [selectedIndex]="active" #tabGroup -->
-        <!-- (selectedTabChange)="changeProjectTab()"  [(selectedIndex)]="selectedProjectIndex"  -->
-        
+      
         <mat-tab label="თანამშრომლის ინფო" class="tab1" >
            
             <p *ngIf="onSubmit" class="ptag" >1/2</p>
             
-            <!-- [ngStyle]="{'display': selectedProjectIndex === 0 ? 'block' : 'none'}" -->
+           
             <form  class="form1" [formGroup]="formArr" >
 
-                <!-- formGroupName="myform" -->
-                <!-- [formGroup]="myform" -->
+              
                 <div class="form-group"  >
-                <!-- <label for="name" class="name">სახელი</label>
-                <input type="text" id="name" formControlName="name" placeholder="გრიშა" class="name2" > -->
+              
                 <span *ngIf="formArr.get('name')?.untouched || formArr.get('name')?.valid ; then show;else error" ></span>
-                <!-- *ngIf="myform.get('name')?.untouched || myform.get('name')?.valid ; then show; else error" -->
+              
                 <ng-template #show>
                     
                     <label for="name" class="name">სახელი</label>
@@ -40,15 +35,13 @@
                 <label for="name" class="name2 name4" >სახელი</label>
                 <input type="text" id="name" formControlName="name" placeholder="გრიშა" class="name3" >
                 <span class="alert" *ngIf="formArr.get('name')?.touched && formArr.get('name')?.invalid" >გამოიყენე ქართული ასოები</span>
-                <!-- *ngIf="myform.get('name')?.touched && myform.get('name')?.invalid" -->
+              
             </ng-template>
                 </div>
                 <div class="surname2">
-                <!-- <label for="surname">გვარი</label>
-                <input type="text" id="surname" formControlName="surname" placeholder="ბაგრატიონი">
-                <span>მინიმუმ 2 სიმბოლო, ქართული ასოები</span> -->
+                
                 <span  *ngIf="formArr.get('surname')?.untouched || formArr.get('surname')?.valid ; then showsurname;else errorsurname" ></span>
-                <!-- *ngIf="myform.get('surname')?.untouched || myform.get('surname')?.valid ; then showsurname; else errorsurname" -->
+               
 
                 <ng-template #showsurname>
                 <label for="surname">გვარი</label>
@@ -62,7 +55,7 @@
                         <label for="surname" class="name4" style="margin-top:-30px" *ngIf="onMobile">გვარი</label>
                         <input type="text" id="surname" formControlName="surname" placeholder="ბაგრატიონი" class="surname">
                         <span class="alert3" *ngIf="formArr.get('surname')?.touched && formArr.get('surname')?.invalid" >გამოიყენე ქართული ასოები</span>
-                        <!-- *ngIf="myform.get('surname')?.touched && myform.get('surname')?.invalid" -->
+                       
                 </ng-template>
                 </div>
                
@@ -108,13 +101,13 @@
                 <!-- *ngIf="myform.get('email')?.untouched || myform.get('email')?.valid ; then showemail; else erroremail" -->
                 <ng-template #showemail>
                     <label for="mail" class="email">მეილი</label>
-                    <input type="email" id="mail" class="e-mail" formControlName="email" placeholder="grish666@redberry.ge">
-                    <span class="mailspan">უნდა მთავრდებოდეს @redberry.ge-ით</span>
+                    <input type="email" id="mail" class="e-mail" formControlName="email" placeholder="grish666@gmail.com">
+                    <span class="mailspan">უნდა მთავრდებოდეს @gmail.com-ით</span>
                 </ng-template>
                 <ng-template #erroremail>
                     <label for="mail" class="email" style="color: #E52F2F;">მეილი</label>
-                    <input type="email" id="mail" class="e-mail" formControlName="email" placeholder="grish666@redberry.ge" style="border-color:#E52F2F ;">
-                    <span class="mailspan" style="color:#E52F2F">უნდა მთავრდებოდეს @redberry.ge-ით</span>
+                    <input type="email" id="mail" class="e-mail" formControlName="email" placeholder="grish666@gmail.com" style="border-color:#E52F2F ;">
+                    <span class="mailspan" style="color:#E52F2F">უნდა მთავრდებოდეს @gmail.com-ით</span>
                 </ng-template>
                 <span *ngIf="formArr.get('phone_number')?.untouched || formArr.get('phone_number')?.valid ; then showphone;else errorphone"></span>
                 <!-- *ngIf="myform.get('phone')?.untouched || myform.get('phone')?.valid ; then showphone; else errorphone" -->
@@ -152,48 +145,15 @@
         <form action="" class="form2"  [formGroup]="formArr">
             <!-- formGroupName="secondForm" -->
             <!-- [formGroup]="secondForm" -->
-        <div class="upload" *ngIf="!url; else showerror">
+        <div class="upload">
+            <img src="assets/Layer1.png" alt="" class="landing">
 
-            <p class="upload2" *ngIf="!onMobile">ჩააგდე ან ატვირთე ლეპტოპის ფოტო</p>
-            <img src="assets/photo.png" alt=""  onclick="document.getElementById('getFile').click()" *ngIf="onMobile" class="photo">
-            <p class="upload2" *ngIf="onMobile">ლეპტოპის ფოტოს &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ატვირთვა</p>
-            <img  [src]="url" alt="" class="upload show" *ngIf="url && onMobile"  > 
-            
-            <button class="btn2"  onclick="document.getElementById('getFile').click()" *ngIf="!onMobile">ატვირთე</button>
-                <img  [src]="url" alt="" class="upload show" *ngIf="url && !onMobile"  > 
-            <input type='file' id="getFile" style="display:none" formControlName="laptop_image" (change)="getFile($event)" (change)="changeImage($event)">
+           
     
         </div>
 
-       
-
-        <ng-template #showerror>
-            <div class="upload" style="border: 2px dashed #E52F2F;background: #FFF1F1 ;">
-
-                <p class="upload2" style="color: #E52F2F;" *ngIf="!onMobile">ჩააგდე ან ატვირთე ლეპტოპის ფოტო</p>
-                <img src="assets/photo.png" alt=""  onclick="document.getElementById('getFile').click()" *ngIf="onMobile" class="photo">
-                <p class="upload2" *ngIf="onMobile" >ლეპტოპის ფოტოს &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ატვირთვა</p>
-                <img src="assets.Vector2.png" alt="" *ngIf="onMobile">
-
-                <button class="btn2"  onclick="document.getElementById('getFile').click()"  >ატვირთე</button>
-                    <img  [src]="url" alt="" class="upload show" *ngIf="url"  > 
-                <input type='file' id="getFile" style="display:none" formControlName="laptop_image" (change)="getFile($event)" (change)="changeImage($event)">
-        
-            </div>
-        </ng-template>
-        <!-- <button *ngIf="url;then button">თავიდან ატვირთე</button> -->
-        <button *ngIf="url; then button">თავიდან ატვირთე</button>
-               
-        <ng-template #button >
-        <!-- <button class="shown">თავიდან ატვირთე</button> -->
-
-        <button  class="shown" onclick="document.getElementById('getFile').click()">თავიდან ატვირთე</button>
-                <img  [src]="url" alt="" class="upload " *ngIf="url"  > 
-            <input type='file' id="getFile" style="display:none"  (change)="getFile($event)" (change)="changeImage($event)">
-    </ng-template>
-    <!-- <span *ngIf="formArr.get('secondForm.laptopName')?.untouched || formArr.get('secondForm.laptopName')?.valid ; then show;else error" ></span>
-    <ng-template #show>
-    </ng-template> -->
+ 
+    
     <div class="laptop" *ngIf="formArr.get('laptop_name')?.untouched || formArr.get('laptop_name')?.valid ; else laptop">
         <label for="cpu" class="laptopName Name8">ლეპტოპის სახელი</label>
         <input type="text" id="cpu"  placeholder="HP"  formControlName="laptop_name"  >

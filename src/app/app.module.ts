@@ -14,10 +14,11 @@ import { state, style, transition, trigger, animate } from "@angular/animations"
 import {MatMenuModule} from '@angular/material/menu'
 import {MatIconModule} from '@angular/material/icon'
 import { TokenInterceptorService } from './shared/token-interceptor.service';
-
+import {MatCardModule} from '@angular/material/card';
 import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SuccessComponent } from './success/success.component';
 import { UserslistModule } from './userslist/userslist.module';
+import { LoginModule } from './login/login.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { UserslistModule } from './userslist/userslist.module';
     LandingComponent,
     RegisterComponent,
     SuccessComponent,
-   
+    
     
   ],
   imports: [
@@ -41,7 +42,9 @@ import { UserslistModule } from './userslist/userslist.module';
     MatMenuModule,
     MatIconModule,
     HttpClientModule,
-    UserslistModule
+    UserslistModule,
+    MatCardModule,
+    LoginModule
     
     
     

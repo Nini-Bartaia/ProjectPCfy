@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing',
@@ -9,7 +10,7 @@ import { NavigationEnd } from '@angular/router';
 export class LandingComponent implements OnInit {
   public onMobile=false;
 
-  constructor() { }
+  constructor(public route:Router) { }
 
   ngOnInit(): void {
 
@@ -18,4 +19,12 @@ export class LandingComponent implements OnInit {
 
 
  
+
+
+  public navigate(){
+    this.route.navigate(['logincomp'])
+  }
+
 }
+
+

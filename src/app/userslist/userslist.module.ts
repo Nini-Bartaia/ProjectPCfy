@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListComponent } from './list/list.component';
 import { UserslistRoutingModule } from './userlist-routing.module';
+import {MatCardModule} from '@angular/material/card';
+
+
 
 
 
@@ -11,7 +14,9 @@ import { UserslistRoutingModule } from './userlist-routing.module';
   ],
   imports: [
     CommonModule,
-    UserslistRoutingModule
+    UserslistRoutingModule,
+    MatCardModule,
+    
   ],
   exports:[ListComponent]
 })

@@ -1,0 +1,15 @@
+<body>
+
+    <img src="assets/Group 4.png" alt="" routerLink="/landing" >
+<form [formGroup]="myform">
+
+    <input type="text" formControlName="name" placeholder="შეიყვანე სახელი">
+    <br>
+    <input type="text" formControlName="surname" placeholder="შეიყვანე გვარი">
+    <br>
+    <input type="email" formControlName="email" placeholder="შეიყვანე ელფოსტა">
+    <button type="button" (click)="checkUser()">შესვლა</button>
+    <p *ngIf="show">მსგავსი იუზერი ვერ მოიძებნა</p>
+
+</form>
+</body>

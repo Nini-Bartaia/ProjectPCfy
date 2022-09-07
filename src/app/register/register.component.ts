@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit {
   isshown=false;
   matTabs = [1,2]; 
   selectedFile:File|null=null;
-  fileSelected?:Blob;
+  // fileSelected?:Blob;
  
   @ViewChild('tabGroup', { static: false })
   tabGroup!: MatTabGroup;
@@ -65,7 +65,7 @@ export class RegisterComponent implements OnInit {
       surname: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.pattern(/^[ა-ჰ]+$/)]),
       team_id: new FormControl(null,Validators.required),
       position_id: new FormControl(null,Validators.required),
-      email: new FormControl('',[Validators.required,Validators.pattern(/^[^@]+@(redberry)\.ge$/i)]),
+      email: new FormControl('',[Validators.required,Validators.pattern(/^[^@]+@(gmail)\.com$/i)]),
       phone_number: new FormControl(null,[Validators.required,Validators.pattern(/^(\+995[0-9]{9})$/)]),
       laptop_name:new FormControl('',[Validators.required,Validators.pattern(/^[A-Za-z0-9\s!@#$%^&*()_+=-`~\\\]\[{}|';:/.,?><]*$/)]),
       laptop_image: new FormControl('',Validators.required),
@@ -78,7 +78,8 @@ export class RegisterComponent implements OnInit {
       laptop_state:new FormControl('',Validators.required),
       laptop_purchase_date:new FormControl(''),
       laptop_price:new FormControl('',[Validators.required,Validators.pattern(/^[0-9]*$/)]),
-      token: new FormControl(this.token,Validators.required)
+      token: new FormControl(this.token,Validators.required),
+      fileSource: new FormControl('', [Validators.required])
       
   
   }, { updateOn: 'blur' })
@@ -234,19 +235,54 @@ public selectList4(e:any){
 }
 
 public getFile(event:any){
-  this.selectedFile=<File>event.target.files[0].value;
+  this.selectedFile=<File>event.target.files[0];
   console.log(this.selectedFile);
+  console.log(this.url)
   const filedata :FormData= new FormData();
-  filedata.append('url',this.selectedFile,this.selectedFile.name);
+  filedata.append('laptop_image',this.selectedFile!,this.selectedFile!.name);
   console.log(filedata)
   console.log(typeof(filedata))
-
-  
-
-  
-  return this.isshown && this.http.post(this.service.myurl,filedata)
+  return this.isshown && this.http.post(this.service.myurl,filedata).subscribe(res=>{
+    console.log(res)
+  })
  
 }
+
+
+// public getFile(event:any){
+//   this.url=(event.srcElement || event.target).files
+//   console.log(this.selectedFile);
+//   console.log(this.url)
+//   const filedata :FormData= new FormData();
+//   filedata.append('file',this.url[0]);
+//   console.log(filedata)
+//   console.log(typeof(filedata))
+//  this.upload(filedata);
+ 
+// }
+upload(filedata: FormData){
+  this.http.post(this.service.postApi+ '/users',filedata).subscribe(res=>{
+        console.log(res)
+      })
+}
+// public select(event: any){
+//   this.selectedFile=<File>event.target.files[0]
+//   this.formArr.get('laptop_image')?.setValue(this.selectedFile)
+//   console.log(this.selectedFile)
+// }
+// public getFile(event: any){
+  
+//   this.selectedFile=<File>event.target.files[0]
+//   this.formArr.get('laptop_image')?.setValue(this.selectedFile)
+//   const filedata :FormData= new FormData();
+//   filedata.append('image',this.selectedFile, this.selectedFile.name);
+//   console.log(filedata)
+//   console.log(typeof(filedata))
+//   this.http.post(this.service.postApi+'/users',filedata)
+  
+//    return this.isshown 
+ 
+// }
 
 
 

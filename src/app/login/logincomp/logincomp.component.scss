@@ -1,0 +1,90 @@
+
+body{
+    background: url('../../../assets/Light-Grey-Background-3.jpg');
+    @media only screen and (min-width: 389px) and (max-width:844px){
+        overflow: hidden;
+    }
+    img{
+        margin-left: 50px;
+        margin-top: 50px;
+        border: 2px solid;
+        border-radius: 50%;
+        @media only screen and (min-width: 389px) and (max-width:844px){
+            margin-left: 160px;
+        }
+    }
+    form{
+      
+
+        margin-left: 740px;
+        padding-top: 60px;
+        width: 500px;
+        height: 400px;
+        background: white;
+        position: relative;
+        top: 20%;
+        border-radius: 20px;
+        @media only screen and (min-width: 389px) and (max-width:844px){
+            margin-left: 0px;
+            width: 100%;
+        }
+        input{
+            width: 310px;
+            height: 40px;
+            border: 1.8px solid #6499FF;
+            padding-left: 10px;
+            border-radius: 8px;
+            margin-right: 35px;
+            margin-left: 90px;
+            font-family: 'Helvetica Neue';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 21px;
+            margin-top: 20px;
+            align-items: center;
+            color: #00000099;
+            @media only screen and (min-width: 389px) and (max-width:844px){
+                width: 250px;
+                margin-left: 70px;
+            }
+        }
+        button{
+            width: 176px;
+            height: 60px;
+            background: #62A1EB;
+            font-family: "Helvetica Neue";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 24px;
+            color: #FFFFFF;
+            border-radius: 8px;
+            border: none;
+            margin-left: 160px;
+            margin-top: 90px;
+            cursor: pointer;
+            @media only screen and (min-width: 389px) and (max-width:844px){
+                margin-left: 110px;
+            }
+
+        }
+        p{
+            margin-top: -120px;
+            margin-left: 90px;
+            font-family: "Helvetica Neue";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 24px;
+            color: red;
+
+            @media only screen and (min-width: 389px) and (max-width:844px){
+                margin-left: 45px;
+            }
+        }
+    }
+
+
+    
+}

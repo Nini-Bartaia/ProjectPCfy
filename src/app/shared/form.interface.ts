@@ -78,7 +78,6 @@ export interface data{
     phone_number:String,
     token:'6d8e33bcc7d765da654c61de1d4151af',
     laptop_name:String,
-    laptop_image:String,
     laptop_brand_id:String,
     laptop_cpu:String,
     laptop_cpu_cores:Number,
