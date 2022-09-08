@@ -11,6 +11,7 @@ import { Teams } from './teams';
 import { Positions } from './positions';
 import { observable, Observable, Subscriber } from 'rxjs';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -20,6 +21,7 @@ export class RegisterComponent implements OnInit {
   hide=false;
   formArr!: FormGroup;
   mydata: teams[]=[];
+  btn:boolean=true;
   position:positions[]=[];
   brands:brands[]=[];
   cpus: cpus[]=[];
@@ -32,6 +34,8 @@ export class RegisterComponent implements OnInit {
   isshown=false;
   matTabs = [1,2]; 
   selectedFile:File|null=null;
+  isNextDisabled=true
+
   // fileSelected?:Blob;
  
   @ViewChild('tabGroup', { static: false })
@@ -46,7 +50,7 @@ export class RegisterComponent implements OnInit {
   base!:any;
 
 
-  constructor(private service:SharedserviceService,private http:HttpClient) { }
+  constructor(private service:SharedserviceService,private http:HttpClient, private route:Router) { }
  
   myform=new UntypedFormGroup({});
   secondForm=new UntypedFormGroup({});
@@ -68,7 +72,6 @@ export class RegisterComponent implements OnInit {
       email: new FormControl('',[Validators.required,Validators.pattern(/^[^@]+@(gmail)\.com$/i)]),
       phone_number: new FormControl(null,[Validators.required,Validators.pattern(/^(\+995[0-9]{9})$/)]),
       laptop_name:new FormControl('',[Validators.required,Validators.pattern(/^[A-Za-z0-9\s!@#$%^&*()_+=-`~\\\]\[{}|';:/.,?><]*$/)]),
-      laptop_image: new FormControl('',Validators.required),
       laptop_brand_id:new FormControl('',Validators.required),
       laptop_cpu:new FormControl('',Validators.required),
       laptop_cpu_cores: new FormControl(null,[Validators.required,Validators.pattern(/^[0-9]*$/)]),
@@ -79,7 +82,7 @@ export class RegisterComponent implements OnInit {
       laptop_purchase_date:new FormControl(''),
       laptop_price:new FormControl('',[Validators.required,Validators.pattern(/^[0-9]*$/)]),
       token: new FormControl(this.token,Validators.required),
-      fileSource: new FormControl('', [Validators.required])
+      
       
   
   }, { updateOn: 'blur' })
@@ -132,6 +135,10 @@ export class RegisterComponent implements OnInit {
     // laptopPurchaseDate:new FormControl(''),
     // laptopPrice:new FormControl('',[Validators.required,Validators.pattern(/^[0-9]*$/)]),
     // })
+    this.formArr.valueChanges.subscribe((v) => {
+      this.isNextDisabled = !this.formArr.valid;
+ });
+
 
     this.service.getData().subscribe((data)=>{
       console.log(data)
@@ -483,8 +490,11 @@ validateForm(formArr:FormGroup){
     const control=formArr.get(field);
     if(control instanceof FormControl){
       control.markAsTouched({onlySelf:true});
+       this.btn=false;
     }else if(control instanceof FormGroup){
       this.validateForm(control);
+       this.btn=true;
+      
     }
   })
 
@@ -501,6 +511,7 @@ formSubmit(){
 
 postData(){
   this.service.post(this.formArr.value as data).subscribe(data=>console.log(data));
+  this.route.navigate(['/success'])
   
 }
 

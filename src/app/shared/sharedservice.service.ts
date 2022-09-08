@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { map, Observable } from 'rxjs';
+import { catchError, map, Observable, tap } from 'rxjs';
 import { brands, cpus, data, positions, teams } from '../shared/form.interface';
 import { Teams } from '../register/teams';
 import { Positions } from '../register/positions';
@@ -50,6 +50,14 @@ export class SharedserviceService {
     return this.http.get<data[]>(this.postApi+'/users');
    
   }
+
+  public getUserId(id:string):Observable<data[]>{
+    return this.http.get<data[]>(this.postApi+'/users/'+ id);
+   
+  }
+
+ 
+
 
 
   getTeams() {

@@ -1,0 +1,57 @@
+body{
+    background-color: rgb(121 121 121 / 37%);
+    
+    .header{
+        margin-left: 45%;
+        font-family: 'Helvetica Neue';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 34px;
+        line-height: 21px;
+        color: #000000;
+        padding-top: 20px;
+    }
+    
+    .wrapper{
+        margin-left: 45%;
+        margin-top: 200px;
+    }
+    hr{
+        border: 1px solid #A5A5A5;
+        margin-top: 100px;
+       
+    }
+    .wrapper2{
+        margin-left: 550px;
+        margin-top: 50px;
+    }
+    .wrapper3{
+        position: absolute;
+        left: 55%;
+        top:  65%;
+    }
+    p{
+        font-family: 'Helvetica Neue';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 27px;
+       
+    }
+    button{
+        width: 176px;
+            height: 60px;
+            background: #62A1EB;
+            font-family: "Helvetica Neue";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 24px;
+            color: #FFFFFF;
+            border-radius: 8px;
+            border: none;
+            margin-left: 160px;
+            cursor: pointer;
+    }
+    
+}

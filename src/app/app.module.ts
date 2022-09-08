@@ -19,6 +19,7 @@ import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common
 import { SuccessComponent } from './success/success.component';
 import { UserslistModule } from './userslist/userslist.module';
 import { LoginModule } from './login/login.module';
+import { DetailsModule } from './details/details.module';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { LoginModule } from './login/login.module';
     HttpClientModule,
     UserslistModule,
     MatCardModule,
-    LoginModule
+    LoginModule,
+    DetailsModule
     
     
     

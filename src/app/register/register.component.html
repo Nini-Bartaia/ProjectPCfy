@@ -58,18 +58,19 @@
                        
                 </ng-template>
                 </div>
+
                
                  <div class="parent">
 
                     
-                 <select (change)="selectList($event)" (change)="OnSelect($event)">
+                 <select  (change)="selectList($event)" (change)="OnSelect($event)">
                     <option selected disabled hidden >თიმი</option>
                     <option [value]="val.id" *ngFor="let val of mydata" >
                         {{val.name}}
                     </option>
                 </select> 
 
-                <span *ngIf="hide" class="danger" style="color: red;"> sheiyvane</span>
+                <ng-template #err class="danger" style="color: red;"> sheiyvane</ng-template>
                 <select (change)="selectList2($event)">
                     <option selected disabled hidden>პოზიცია</option>
                     <option [value]="item.id" *ngFor="let item of myPos">
@@ -124,7 +125,7 @@
                     <span style="margin-left: 35px;" *ngIf="onMobile">ქართული მობ-ნომრის ფორმატი</span>
                 </ng-template>
 
-                    <button type="submit" class="btn"tabindex="-1" (click)='moveToSelectedTab("ლეპტოპის მახასიათებლები")'>შემდეგი</button>
+                    <button type="submit" class="btn"tabindex="-1" (click)='moveToSelectedTab("ლეპტოპის მახასიათებლები")' (click)="validateForm(formArr)">შემდეგი</button>
                    
                     <!-- <mat-tab label="ლეპტოპის მახასიათებლები"  #tab [disabled]='isDisabled' >second 
                         <label for="nickname" class="name">nickname</label>
@@ -173,7 +174,7 @@
     <!-- *ngIf="id; else brand"  -->
     <!-- (click)="brand" -->
 
-    <select (change)="selectList3($event)" class="brand"  *ngIf="formArr.get('laptop_brand_id')?.hasError('required') && formArr.get('laptop_brand_id')?.hasError('invalidValue') && formArr.get('laptop_brand_id')?.invalid;  else brand"  >
+    <select (change)="selectList3($event)" class="brand"   >
         <option selected disabled hidden >ლეპტოპის ბრენდი</option>
         <option [value]="val.id" *ngFor="let val of brands" >
             {{val.name}}
@@ -181,33 +182,33 @@
     </select >
 
    
-    <ng-template #brand>
+    <!-- <ng-template #brand>
         <select (change)="selectList3($event)" class="brand " style="border: 2px solid red;" >
             <option selected disabled hidden >ლეპტოპის ბრენდი</option>
             <option [value]="val.id" *ngFor="let val of brands" >
                 {{val.name}}
             </option>
         </select>
-    </ng-template>
+    </ng-template> -->
 
     <hr>
     <!-- (click)="Cpu" *ngIf="id; else brand2" -->
    
-        <select  (change)="selectList4($event)" class="brand brand2" *ngIf="formArr.get('laptop_cpu')?.hasError('required') && formArr.get('laptop_cpu')?.hasError('invalidValue') && formArr.get('laptop_cpu')?.invalid;  else brand2"  >
+        <select  (change)="selectList4($event)" class="brand brand2">
             <option selected disabled hidden >CPU</option>
             <option [value]="val.id" *ngFor="let val of cpus" >
                 {{val.name}}
             </option>
         </select>
 
-        <ng-template #brand2>
+        <!-- <ng-template #brand2>
             <select  (change)="selectList4($event)" class="brand brand2" style=" border: 2px solid #E52F2F;">
                 <option selected disabled hidden >CPU</option>
                 <option [value]="val.id" *ngFor="let val of cpus" >
                     {{val.name}}
                 </option>
             </select>
-        </ng-template>
+        </ng-template> -->
 
     
     <div class="div" *ngIf="formArr.get('laptop_cpu_cores')?.untouched || formArr.get('laptop_cpu_cores')?.valid ; else div">
@@ -303,7 +304,7 @@
 </div>
 
 <p class="back" (click)='moveToSelectedTab2("თანამშრომლის ინფო")'>უკან</p>
-<button type="button" class="submit"  (click)="formSubmit()" (click)="postData()" routerLink="/success" >დამახსოვრება</button> 
+<button type="button" class="submit"  (click)="postData()" [disabled]="formArr.invalid">დამახსოვრება</button> 
 <!-- 
 (click)="postData()" -->
 

@@ -76,7 +76,6 @@ export interface data{
     position_id:Number,
     email: String,
     phone_number:String,
-    token:'6d8e33bcc7d765da654c61de1d4151af',
     laptop_name:String,
     laptop_brand_id:String,
     laptop_cpu:String,
@@ -87,6 +86,7 @@ export interface data{
     laptop_state:String,
     laptop_purchase_date:String,
     laptop_price:Number
+    id:string
 
 }
     

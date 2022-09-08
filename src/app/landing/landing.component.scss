@@ -15,8 +15,8 @@ body{
         margin-bottom: 129.89px;
     }
    
-    @font-face {
-        font-family: "myfont";
+    @font-face{
+        font-family:"myfont";
         src:url('/HelveticaNeue-Medium-11.ttf');
         
     }
@@ -51,7 +51,7 @@ body{
         background: #1A5DAB;
     }
  
-}
+
 
 @media only screen and (min-width: 389px) and (max-width:844px){
     .layer{
@@ -62,4 +62,5 @@ body{
     }
     
     
+}
 }

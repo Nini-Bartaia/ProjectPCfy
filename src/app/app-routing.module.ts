@@ -25,7 +25,11 @@ const routes: Routes = [{
 {
   path:'login/logincomp',
   loadChildren:()=>import('src/app/login/login.module').then((m)=>m.LoginModule)
+},{
+path:'details/detailid',
+loadChildren:()=>import('src/app/details/details.module').then((m)=>m.DetailsModule)
 }
+
 
 ];
 

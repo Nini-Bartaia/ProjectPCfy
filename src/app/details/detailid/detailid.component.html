@@ -1,0 +1,144 @@
+<body>
+  
+
+<p class="header">ლეპტოპის ინფო</p>
+
+<!-- <div *ngFor=" let i in data">
+{{i?.surname}}
+</div> -->
+<!-- <p>სახელი</p> <br>
+<p>გვარი</p> <br>
+<p>თიმი</p> <br>
+<p>პოზიცია</p> <br>
+<p>მეილი</p> <br>
+<p>ტელ.ნომერი</p> <br> -->
+<!-- <div  *ngFor="let items of data | keyvalue">
+
+<ng-container
+ *ngIf="items.key == 'surname' || 
+ items.key == 'name' || items.key == 'email' || items.key == 'position_id' || items.key == 'team_id' || items.key == 'phone_number'
+ ">
+    <span class="col-6">{{items.value}}</span>
+</ng-container>
+</div> -->
+<div class="wrapper">
+ <p style="float:left; margin-right: 40px;">სახელი:</p>
+<div *ngFor="let items of data | keyvalue">
+<ng-container  *ngIf="items.key == 'name'  ">
+    <p style="margin-right:5px">{{items.value}}</p>
+</ng-container>
+</div>
+
+<p style="float:left; margin-right: 40px;">გვარი:</p>
+<div *ngFor="let items of data | keyvalue">
+<ng-container  *ngIf="items.key == 'surname' ">
+    <p style=" margin-right:5px">{{items.value}}</p>
+</ng-container>
+</div>
+
+<p style="float:left; margin-right: 40px;" >თიმი:</p>
+<div *ngFor="let items of data | keyvalue">
+<ng-container  *ngIf="items.key == 'team_id'">
+    <p style="margin-right:5px">{{items.value}}</p> 
+</ng-container>
+</div>
+<p style="float:left; margin-right: 40px;" >პოზიცია:</p>
+<div *ngFor="let items of data | keyvalue">
+<ng-container  *ngIf="items.key == 'position_id'">
+    <p style="margin-right:5px">{{items.value}}</p> 
+</ng-container>
+</div>
+
+<p style="float:left; margin-right: 40px;" >მეილი:</p>
+<div *ngFor="let items of data | keyvalue">
+<ng-container  *ngIf="items.key == 'email'">
+    <p style="margin-right:5px">{{items.value}}</p> 
+</ng-container>
+</div>
+
+<p style="float:left; margin-right: 40px;" >ტელ.ნომერი:</p>
+<div *ngFor="let items of data | keyvalue">
+<ng-container  *ngIf="items.key == 'phone_number'">
+    <p style="margin-right:5px">{{items.value}}</p> 
+</ng-container>
+</div>
+
+</div>
+
+<hr>
+
+<div class="wrapper2">
+<p style="float:left; margin-right: 40px;" >ლეპტოპის სახელი:</p>
+<div *ngFor="let items of data | keyvalue">
+<ng-container  *ngIf="items.key == 'laptop_name'">
+    <p style="margin-right:5px">{{items.value}}</p> 
+</ng-container>
+</div>
+<p style="float:left; margin-right: 40px;">ლეპტოპის ბრენდი:</p>
+<div *ngFor="let items of data | keyvalue">
+<ng-container  *ngIf="items.key == 'laptop_brand_id'">
+    <p style="margin-right:5px">{{items.value}}</p> 
+</ng-container>
+</div>
+<p style="float:left; margin-right: 40px;" >RAM:</p>
+<div *ngFor="let items of data | keyvalue">
+<ng-container  *ngIf="items.key == 'laptop_ram'">
+    <p style="margin-right:5px">{{items.value}}</p> 
+</ng-container>
+</div>
+<p style="float:left; margin-right: 40px;" >მეხსიერების ტიპი:</p>
+<div *ngFor="let items of data | keyvalue">
+<ng-container  *ngIf="items.key == 'laptop_hard_drive_type'">
+    <p style="margin-right:5px">{{items.value}}</p> 
+</ng-container>
+</div>
+<p style="float:left; margin-right: 40px;" >CPU:</p>
+<div *ngFor="let items of data | keyvalue">
+<ng-container  *ngIf="items.key == 'laptop_hard_drive_type'">
+    <p style="margin-right:5px">{{items.value}}</p> 
+</ng-container>
+</div>
+<p style="float:left; margin-right: 40px;" >CPU-ს ბირთვი:</p>
+<div *ngFor="let items of data | keyvalue">
+<ng-container  *ngIf="items.key == 'laptop_cpu_cores'">
+    <p style="margin-right:5px">{{items.value}}</p> 
+</ng-container>
+</div>
+<p style="float:left; margin-right: 40px;" >CPU-ს ნაკადი:</p>
+<div *ngFor="let items of data | keyvalue">
+<ng-container  *ngIf="items.key == 'laptop_cpu_threads'">
+    <p style="margin-right:5px">{{items.value}}</p> 
+</ng-container>
+</div>
+</div>
+
+<div class="wrapper3">
+<p style="float:left; margin-right: 40px;" >ლეპტოპის მდგომარეობა:</p>
+<div *ngFor="let items of data | keyvalue">
+<ng-container  *ngIf="items.key == 'laptop_state'">
+    <p style="margin-right:5px">{{items.value}}</p> 
+</ng-container>
+</div>
+<p style="float:left; margin-right: 40px;" >ლეპტოპის ფასი:</p>
+<div *ngFor="let items of data | keyvalue">
+<ng-container  *ngIf="items.key == 'laptop_price'">
+    <p style="margin-right:5px">{{items.value}}</p> 
+</ng-container>
+</div>
+<p style="float:left; margin-right: 40px;" >შეძენის რიცხვი:</p>
+<div *ngFor="let items of data | keyvalue">
+<ng-container  *ngIf="items.key == 'laptop_purchase_date'">
+    <p style="margin-right:5px">{{items.value}}</p> 
+</ng-container>
+</div>
+</div>
+<!-- <div *ngFor="let items of data | keyvalue">
+    
+    <ng-container *ngIf="items.key == 'surname' || items.key == 'name'">
+        <span class="col-6">{{items.value}}</span>
+    </ng-container>
+  </div> -->
+
+  <button routerLink="/list">უკან</button>
+
+</body>

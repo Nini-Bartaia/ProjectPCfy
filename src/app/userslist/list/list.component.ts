@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { data } from 'src/app/shared/form.interface';
 import { SharedserviceService } from 'src/app/shared/sharedservice.service';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -13,7 +14,7 @@ export class ListComponent implements OnInit {
 
   
 
-  constructor(private service:SharedserviceService, private http: HttpClient) { }
+  constructor(private service:SharedserviceService, private http: HttpClient, private route:Router) { }
 
   ngOnInit(): void {
       
@@ -24,6 +25,11 @@ export class ListComponent implements OnInit {
 })
   }
 
+
+  
+
+
+  
 
 
 }
