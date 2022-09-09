@@ -1,6 +1,9 @@
 body{
     background-color: rgb(121 121 121 / 37%);
-    
+
+    @media only screen and (min-width: 389px) and (max-width:844px){
+        height: auto;
+    }
     .header{
         margin-left: 45%;
         font-family: 'Helvetica Neue';
@@ -10,11 +13,18 @@ body{
         line-height: 21px;
         color: #000000;
         padding-top: 20px;
+        @media only screen and (min-width: 389px) and (max-width:844px){
+            margin-left: 15%;
+        }
     }
     
     .wrapper{
         margin-left: 45%;
         margin-top: 200px;
+        @media only screen and (min-width: 389px) and (max-width:844px){
+            margin-left: 10%;
+            margin-top: 100px;
+        }
     }
     hr{
         border: 1px solid #A5A5A5;
@@ -24,11 +34,19 @@ body{
     .wrapper2{
         margin-left: 550px;
         margin-top: 50px;
+        @media only screen and (min-width: 389px) and (max-width:844px){
+            margin-left: 50px;
+            margin-top: 400px;
+        }
     }
     .wrapper3{
         position: absolute;
         left: 55%;
         top:  65%;
+        @media only screen and (min-width: 389px) and (max-width:844px){
+            left: 30%;
+            top: 60%;
+        }
     }
     p{
         font-family: 'Helvetica Neue';
@@ -52,6 +70,10 @@ body{
             border: none;
             margin-left: 160px;
             cursor: pointer;
+            @media only screen and (min-width: 389px) and (max-width:844px){
+                margin-top: 40px;
+                margin-left: 20px;
+            }
     }
     
 }

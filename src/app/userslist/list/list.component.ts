@@ -3,10 +3,12 @@ import { data } from 'src/app/shared/form.interface';
 import { SharedserviceService } from 'src/app/shared/sharedservice.service';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss']
+  styleUrls: ['./list.component.scss'],
+ 
 })
 export class ListComponent implements OnInit {
 
@@ -22,11 +24,13 @@ export class ListComponent implements OnInit {
   this.usersData=res;
   console.log(this.usersData)
   
+},(err)=>{
+  console.error('error caught in component')
 })
   }
 
 
-  
+
 
 
   

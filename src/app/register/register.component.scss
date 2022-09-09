@@ -1,12 +1,11 @@
+@import "../../styles.scss";
 body{
     background-color: #EBEBEB;
     height: auto;
     @media only screen and (min-width: 389px) and (max-width:844px){
        width: 100%;
        height: auto;
-
 }
-    
     .logo1{
         margin-left: 917px;
         margin-top: 30px;
@@ -17,11 +16,9 @@ body{
         margin-top: 35px;
         cursor: pointer;
     }
-
     .ptag{
         display: none;
     @media only screen and (min-width: 389px) and (max-width:844px){
-       
             width: 21px;
             height: 17px;
             display: block;
@@ -35,9 +32,6 @@ body{
             color: #898989;
         }
  }
-
-
-
     margin-top: -25px;
     
     @media only screen and (min-width: 389px) and (max-width:844px){
@@ -52,15 +46,6 @@ body{
     height: 800px;
     margin-left: 347px;
     margin-top: 52px;
-   
-        // .upload{
-        //     width:878px;
-        //     height: 423px;
-        //     background: #F7F7F7;
-        //     border: 2px dashed #4386A9;
-        //     border-radius: 18px;
-        // }
-
         @media only screen and (min-width: 389px) and (max-width:844px){
             width: 100%;
             height: auto;
@@ -83,29 +68,16 @@ div {
         
     }
     label, input{
-        display: block;
-        font-family: Roboto, "Helvetica Neue", sans-serif;
-        font-style: normal;
-        font-weight: 500;
-        margin-bottom: 5px;
-        font-size: 18px;
-        line-height: 21px;
-        color:#000000;
+        @include input;
     }
 
 .name{
     @media only screen and (min-width: 389px) and (max-width:844px){
-        
         padding-top: 30px;
-        
-        
     }
 }
-    
     .name,.name2,.span{
         margin-left: 230px;
-      
-        
     }
     .alert{
         margin-left: 230px;
@@ -115,7 +87,6 @@ div {
         font-weight: 300;
         font-size: 14px;
         line-height: 21px;
-        
     }
     .alert2{
         color: #E52F2F;
@@ -133,35 +104,22 @@ div {
         font-size: 14px;
         line-height: 21px;
     }
-
-   
     .name4{
         color:#E52F2F ;
         @media only screen and (min-width: 389px) and (max-width:844px){
-            
             padding-top: 30px;
-            
         }
     }
-    
     .name3{
         border-color: #E52F2F;
         margin-left:230px ;
     }
-
     .surname{
         border-color: #E52F2F;
     }
-    
     span{
-        font-family: 'Helvetica Neue';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 21px;
-        color: #2E2E2E;
+        @include font;
     }
-   
     input{
         width: 310px;
         height: 40px;
@@ -184,41 +142,24 @@ div {
     input:focus{
         outline-color: #6499FF;
     }
-    
-   
-
 }
 @media only screen and (min-width: 389px) and (max-width:844px){
 .surname2{
-  
-    margin-left: 37px;
-  
-   
+    margin-left: 37px;  
 }
 }
-
-// .surname2{
-//     @media only screen and (min-width: 389px) and (max-width:844px){
-//     margin-top: 20px;
-//     margin-left: 37px;
-// }
-// }
 .parent{
     overflow: hidden;
 select{
+    @include font;
     width: 705px;
     height: 45px;
     margin-left: 230px;
     border-radius: 8px;
-    color: #000000;
-    font-family: 'Helvetica Neue';
     background:url("/assets/Vector.png")  right center no-repeat  #EBEBEB;
     appearance: none; 
 	-webkit-appearance: none;
-    font-style: normal;
-    font-weight: 500;
     font-size: 18px;
-    line-height: 21px;
     letter-spacing: 0.04em;
     padding-left: 10px;
     background-position-x: 670px;
@@ -229,7 +170,6 @@ select{
     @media only screen and (min-width: 389px) and (max-width:844px){
         width: 335px;
         height: 60px;
-       
         background-position-x: 300px;
     }    
     select::-ms-expand { 
@@ -241,21 +181,13 @@ select{
     option:hover{
         background-color: #E7F0F8;
     }
-    
 }
 }
 .select{
     border-color: #E52F2F;
 }
 .email{
-    display: block;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    margin-bottom: 5px;
-    font-size: 18px;
-    line-height: 21px;
-    color: #000000;
+    @include input;
     position: relative;
     top: 45%;
     right: 62%;
@@ -273,11 +205,9 @@ select{
     padding-left: 10px;
     border-radius: 8px;
     margin-right: 20px;
-    font-family: 'Helvetica Neue';
-    font-style: normal;
+    @include font;
     font-weight: 400;
     font-size: 16px;
-    line-height: 21px;
     align-items: center;
     color: #00000099;
     margin-top: 20px;
@@ -298,14 +228,7 @@ select{
     }
 }
 .phone2{
-    display: block;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    margin-bottom: 5px;
-    font-size: 18px;
-    line-height: 21px;
-    color: #000000;
+    @include input;
     position: relative;
     left: 19%;
     top: 7%;
@@ -321,7 +244,6 @@ select{
     top: 5%;
     @media only screen and (min-width: 389px) and (max-width:844px){
         right: -8%;
-
     }
 }
 .phonespan{
@@ -329,15 +251,12 @@ select{
     @media only screen and (min-width: 389px) and (max-width:844px){
         margin-left: 10px;
     }
-    
 }
 .btn{
     width: 176px;
     height: 60px;
     background: #62A1EB;
-    font-family: "Helvetica Neue";
-    font-style: normal;
-    font-weight: 500;
+    @include font;
     font-size: 20px;
     line-height: 24px;
     color: #FFFFFF;
@@ -350,7 +269,6 @@ select{
         margin-left: 195px;
         margin-bottom: 50px;
     }
-
 }
 .btn:hover{
     background: #317AD0;
@@ -358,14 +276,7 @@ select{
 .btn:focus{
     background: #1A5DAB;
 }
-
-
-
 }
-
-
-
-
 .form2{
     background-color: white;
     border-radius: 18px;
@@ -378,7 +289,6 @@ select{
             width: 100%;
             height: 1850px;
             margin-left: 0px;
-
     }
     .upload{
         width:878px;
@@ -406,30 +316,20 @@ select{
             height: 244px;
             height: 244px;
             margin-left: 15px;
-           
-
     }
        .photo{
         @media only screen and (min-width: 389px) and (max-width:844px){
             margin-left: 156px;
             margin-top: 63px;
-
-
     }
        }
-
-       
-
         .btn2{
-            display:block;
             width: 233px;
             height: 60px;
             background: #62A1EB;
             border-radius: 8px;
             background: #62A1EB;
-            font-family: "Helvetica Neue";
-            font-style: normal;
-            font-weight: 500;
+            @include input;
             font-size: 20px;
             line-height: 24px;
             color: #FFFFFF;
@@ -441,28 +341,7 @@ select{
             @media only screen and (min-width: 389px) and (max-width:844px){
                 display: none;
             }
-
         }
-        .upload2{
-            width: 195px;
-            height: 76px;
-            font-family: 'Helvetica Neue';
-            font-style: normal;
-            font-weight: 500;
-            font-size: 20px;
-            line-height: 38px;
-            color: #4386A9;
-            margin-left: 340px;
-            margin-top: 90px;
-            @media only screen and (min-width: 389px) and (max-width:844px){
-                margin-left: 80px;
-                margin-top: 20px;
-    
-    
-        }
-        
-        }
-       
     }
     .show{
         margin-top: -298px;
@@ -470,18 +349,14 @@ select{
         @media only screen and (min-width: 389px) and (max-width:844px){
             display: none;
         }
-    
     }
     .shown{
-        display:block;
         width: 233px;
         height: 60px;
         background: #62A1EB;
         border-radius: 8px;
         background: #62A1EB;
-        font-family: "Helvetica Neue";
-        font-style: normal;
-        font-weight: 500;
+        @include input;
         font-size: 20px;
         line-height: 24px;
         color: #FFFFFF;
@@ -506,8 +381,6 @@ select{
         position: none;
         margin-left: 25px;
     }
-
- 
     input{
         width: 408px;
         height: 40px;
@@ -541,40 +414,27 @@ select{
 }
 .hint{
     @media only screen and (min-width: 389px) and (max-width:844px){
-        font-family: 'Helvetica Neue';
-        font-style: normal;
+       
+        @include font;
         font-weight: 300;
         font-size: 14px;
-        color: #2E2E2E;
-        line-height: 21px;
+        
     }
 }
     .hint, .laptopName2, .laptopName{
-        display: block;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    margin-bottom: 5px;
-    font-size: 18px;
-    line-height: 21px;
-    color: #000000;
+    @include input;
 
     }
 .laptopName{
     @media only screen and (min-width: 389px) and (max-width:844px){
-        //margin-left: -440px;
         margin-left: -750px;
         margin-top: 150px;
-    //     margin-left: -440px;
-    // margin-top: 150px;
-        // margin-top: 150px;
-        //margin-top: 500px;
     }
 }
 .Name6{
     @media only screen and (min-width: 389px) and (max-width:844px){
         margin-left: 0px;
-    margin-top: -200px;
+        margin-top: -200px;
     }
 }
 .Name7{
@@ -597,9 +457,7 @@ select{
     }
 }
     .parent2{
-       // overflow: hidden;
         margin-top: -80px;
-    
     .brand{
     width: 408px;
     height: 60px;
@@ -631,7 +489,6 @@ select{
     .brand::-ms-expand { 
         display: none; 
     }
-   
     }
     .brand2{
     margin-left: 165px;
@@ -647,9 +504,7 @@ select{
         margin-left: 20px;
         background-position-x: 300px;
     }
-
     }
-   
     hr{
         border: 1px solid #C7C7C7;
         height: 0px;
@@ -658,9 +513,7 @@ select{
         @media only screen and (min-width: 389px) and (max-width:844px){
             height: 8px;
             background: #ebebeb;
-
         }
-
     }
     .div{
         margin-left: 460px;
@@ -669,20 +522,12 @@ select{
             margin-top: 200px;
         }
     .hint2{
-        display: block;
-        font-family: Roboto, "Helvetica Neue", sans-serif;
-        font-style: normal;
-        font-weight: 500;
-        margin-bottom: 5px;
-        font-size: 18px;
-        line-height: 21px;
-        color: #000000;
+        @include input;
         margin-top: 10px;
         @media only screen and (min-width: 389px) and (max-width:844px){
             margin-left: -440px;
         }
     }
-    
 .cpuname2{
     width: 277px;
     height: 60px;
@@ -705,14 +550,11 @@ select{
         padding-bottom: 0px;
         margin-bottom: 0px;
     }
-
 }
     }
-
     .div2{
     margin-left: 770px;
     margin-top: -130px;
-
     .thread{
         width: 277px;
         height: 60px;
@@ -731,24 +573,15 @@ select{
             margin-left: -750px;
             width: 320px;
             height: 45px;
-            
         }
     }
     .hint3{
-        display: block;
-        font-family: Roboto, "Helvetica Neue", sans-serif;
-        font-style: normal;
-        font-weight: 500;
-        margin-bottom: 5px;
-        font-size: 18px;
-        line-height: 21px;
-        color: #000000;
+        @include input;
         margin-top: 10px;
         @media only screen and (min-width: 389px) and (max-width:844px){
             margin-left: -750px;
         }
     }
-
     .Hint1{
         @media only screen and (min-width: 389px) and (max-width:844px){
             margin-top: 20px;
@@ -757,11 +590,8 @@ select{
     }
 }
 .div3{
-      
     margin-top: 80px;
     margin-left: 160px;
-    // width: 408px;
-    // height: 60px;
     @media only screen and (min-width: 389px) and (max-width:844px){
         width: 310px;
         height: 55px;
@@ -770,84 +600,52 @@ select{
     .thread2{
         width: 408px;
         height: 60px;
-       
     }
-
     .thread4{
         @media only screen and (min-width: 389px) and (max-width:844px){
-            //margin-top: 600px; 
             width: 320px;
             height: 45px;
             margin-left: 150px;
-            
         }
     }
-
 }
-
 .radio{
     margin-left: 700px;
     margin-top: -100px;
-
     .iconradio{
         padding-left: 14px;
     }
     .SSD{
         margin-right: 45px;
     }
-    // label:before {
-    //     content: "\2022";
-    //    border: 2px solid red;
-        
-    // }
-
     .paragraph{
         @media only screen and (min-width: 389px) and (max-width:844px){
             margin-left: -680px;
             margin-top: 180px;
-            font-family: 'Helvetica Neue';
-            font-style: normal;
-            font-weight: 500;
+            @include font;
             font-size: 20px;
-            line-height: 21px;
-            color: #000000;
         }
-
-
     }
     .paragraph + input{
         @media only screen and (min-width: 389px) and (max-width:844px){
             margin-left: -680px;
             margin-top: 20px;
-
         }
     }
     .paragraph + input +label{
         @media only screen and (min-width: 389px) and (max-width:844px){
-            font-family: 'Helvetica Neue';
-            font-style: normal;
             font-weight: 400;
             font-size: 16px;
-            line-height: 21px;
-            color: #000000;
+            @include font;
         }
     }
-
     .hdd{
-        font-family: 'Helvetica Neue';
-        font-style: normal;
         font-weight: 400;
         font-size: 16px;
-        line-height: 21px;
-        color: #000000;
-    
+        @include font;
     }
-    
-    
 }
-
-.line{
-       
+.line{  
     margin-top: 100px;
 }
 .date2{
@@ -865,7 +663,6 @@ select{
     margin-left: 150px;
     }
 }
-
 .price{
     @media only screen and (min-width: 389px) and (max-width:844px){
     margin-left: -620px;
@@ -886,7 +683,6 @@ select{
 .div4{
     margin-top: 50px;
 }
-
 .wrapper2{
     margin-left: 645px;
     margin-top: -100px;
@@ -898,15 +694,11 @@ select{
     .thread3::-ms-expand { 
         display: none; 
     }
-
 }
-
 }
 .radio2{
     margin-left: 160px;
     margin-top: 40px;
-
-
     .paragraph2{
         @media only screen and (min-width: 389px) and (max-width:844px){
         font-family: 'Helvetica Neue';
@@ -919,7 +711,6 @@ select{
         margin-top: 80px;
     }
 }
-
 .paragraph2 + input{
     @media only screen and (min-width: 389px) and (max-width:844px){
         margin-left: -125px;
@@ -928,36 +719,21 @@ select{
 }
 .paragraph2 + input + label{
     @media only screen and (min-width: 389px) and (max-width:844px){
-        font-family: 'Helvetica Neue';
-        font-style: normal;
         font-weight: 400;
         font-size: 16px;
-        line-height: 21px;
-        color: #000000;
+        @include font;
     }
 }
-
 .paragraph2 + input + label +input + label{
-    font-family: 'Helvetica Neue';
-    font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    line-height: 21px;
-    color: #000000;
+    @include font;
 }
-
 }
-
-
-   
 }
-
 .back{
-    font-family: 'Helvetica Neue';
-    font-style: normal;
-    font-weight: 500;
+    @include font;
     font-size: 18px;
-    line-height: 21px;
     color: #62A1EB;
     margin-left: 160px;
     margin-top: 70px;
@@ -965,8 +741,6 @@ select{
     @media only screen and (min-width: 389px) and (max-width:844px){
         margin-left: 30px;
     }
-
-
 }
 .submit{
     display: block;
@@ -990,9 +764,7 @@ select{
         margin-left: 130px;
     }
 }
-
     }
-
     .form2 +img{
         width: 75px;
         margin-left: 900px;
@@ -1000,13 +772,11 @@ select{
         padding-top: 0px;
         padding-bottom: 20px;
     }
-   
 }
+
 ::ng-deep .mat-tab-labels{
     justify-content: center !important;
 }
-
-
  ::ng-deep .mat-ink-bar {           
     &:before,
     &:after {
@@ -1015,8 +785,7 @@ select{
         width: 40px;
         background-color: #EBEBEB;
         position: absolute;
-        left: 0;
-       
+        left: 0; 
     }
     &:after {
         left: initial;
@@ -1025,9 +794,7 @@ select{
     background-color:#232323 !important;
     @media only screen and (min-width: 389px) and (max-width:844px){
         width: 0px !important;
- 
- }
-     
+ }  
 }
 ::ng-deep .mat-tab-label{
     font-size: 20px;
@@ -1039,26 +806,19 @@ select{
 ::ng-deep .mat-tab-header{
     border: none !important;
 }
-
 ::ng-deep .mat-tab-label.mat-focus-indicator.mat-tab-label.ng-star-inserted {
     opacity: 1;
 }
-
 ::ng-deep   .mat-ripple.mat-tab-label.mat-focus-indicator.mat-tab-label.ng-star-inserted {
     opacity: 1;
 }
-
 ::ng-deep  .mat-tab-label-content{
 @media only screen and (min-width: 389px) and (max-width:844px){
-
    padding-left: 50px;
-   
 } 
 }
 ::ng-deep  .mat-tab-label-0-1{
     @media only screen and (min-width: 389px) and (max-width:844px){
-    
        padding-left: -40px;
-       
     } 
     }

@@ -1,11 +1,14 @@
+// import { ChangeDetectionStrategy } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+
 import { NavigationEnd } from '@angular/router';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
-  styleUrls: ['./landing.component.scss']
+  styleUrls: ['./landing.component.scss'],
+  
 })
 export class LandingComponent implements OnInit {
   public onMobile=false;
@@ -16,10 +19,6 @@ export class LandingComponent implements OnInit {
 
     window.onresize=()=> this.onMobile= window.innerWidth <=390
   }
-
-
- 
-
 
   public navigate(){
     this.route.navigate(['logincomp'])

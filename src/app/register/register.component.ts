@@ -12,10 +12,13 @@ import { Positions } from './positions';
 import { observable, Observable, Subscriber } from 'rxjs';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  styleUrls: ['./register.component.scss'],
+ 
 })
 export class RegisterComponent implements OnInit {
   hide=false;
@@ -143,23 +146,31 @@ export class RegisterComponent implements OnInit {
     this.service.getData().subscribe((data)=>{
       console.log(data)
       this.mydata=data;
+    }, (err)=>{
+      console.error('error caught in component')
     })
 
     this.service.getPositions().subscribe((value)=>{
       console.log(value)
       this.position=value;
       
+    },(err)=>{
+      console.error('error caught in component')
     })
 
     this.service.getBrands().subscribe((value)=>{
       console.log(value)
       this.brands=value;
       
+    },(err)=>{
+      console.error('error caught in component')
     })
     this.service.getCpu().subscribe((value)=>{
       console.log(value)
       this.cpus=value;
       
+    },(err)=>{
+      console.error('error caught in component')
     })
 
     // this.mydata = this.service.getData();
@@ -251,6 +262,8 @@ public getFile(event:any){
   console.log(typeof(filedata))
   return this.isshown && this.http.post(this.service.myurl,filedata).subscribe(res=>{
     console.log(res)
+  },(err)=>{
+    console.error('error caught in component')
   })
  
 }
@@ -270,6 +283,8 @@ public getFile(event:any){
 upload(filedata: FormData){
   this.http.post(this.service.postApi+ '/users',filedata).subscribe(res=>{
         console.log(res)
+      },(err)=>{
+        console.error('error caught in component')
       })
 }
 // public select(event: any){
@@ -445,6 +460,7 @@ moveToSelectedTab(tabName: string) {
         console.log(this.formArr.get('myform'))
       if ((<HTMLElement>document.querySelectorAll('.mat-tab-label-content')[1]).innerText == tabName) {
         console.log((<HTMLElement>document.querySelectorAll('.mat-tab-label-content')[1]).innerText);
+        
         (<HTMLElement>document.querySelectorAll('.mat-tab-label')[1]).click();
         //console.log( (<HTMLElement>document.querySelectorAll('.mat-tab-label')[1]).click());
         //  this.isDisabled=false;
@@ -467,6 +483,7 @@ moveToSelectedTab2(tabName: string) {
     console.log((<HTMLElement>document.querySelectorAll('.mat-tab-label-content')[0]).innerText);
     (<HTMLElement>document.querySelectorAll('.mat-tab-label')[0]).click();
       return this.tabGroup._tabs.toArray()[0].isActive = true && this.tabGroup._tabs.toArray()[1].disabled==false;
+
   }
 }
 return this.tabGroup._tabs.toArray()[0].isActive = false && this.tabGroup._tabs.toArray()[1].disabled==true;

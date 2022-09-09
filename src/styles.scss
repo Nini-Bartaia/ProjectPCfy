@@ -2,3 +2,24 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+@mixin input{
+    display: block;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 18px;
+    line-height: 21px;
+    color:#000000;
+}
+
+@mixin font{
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: #2E2E2E;
+}

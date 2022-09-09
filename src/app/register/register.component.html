@@ -125,7 +125,7 @@
                     <span style="margin-left: 35px;" *ngIf="onMobile">ქართული მობ-ნომრის ფორმატი</span>
                 </ng-template>
 
-                    <button type="submit" class="btn"tabindex="-1" (click)='moveToSelectedTab("ლეპტოპის მახასიათებლები")' (click)="validateForm(formArr)">შემდეგი</button>
+                    <button type="submit" class="btn"tabindex="-1" (click)='moveToSelectedTab("ლეპტოპის მახასიათებლები")' >შემდეგი</button>
                    
                     <!-- <mat-tab label="ლეპტოპის მახასიათებლები"  #tab [disabled]='isDisabled' >second 
                         <label for="nickname" class="name">nickname</label>
@@ -256,9 +256,9 @@
     </ng-template>
     <div class="radio">
         <p class="paragraph">მეხსიერების ტიპი</p>
-        <input type="radio" id="ssd" formControlName="laptop_hard_drive_type" name="choose" value="SSD">
+        <input type="radio" id="ssd" formControlName="laptop_hard_drive_type"  value="SSD">
           <label for="ssd" class="SSD">SSD</label>
-        <input type="radio" id="hdd"  formControlName="laptop_hard_drive_type" name="choose" value="HDD"> 
+        <input type="radio" id="hdd"  formControlName="laptop_hard_drive_type"  value="HDD"> 
           <label for="hdd" class="hdd">HDD</label>
     </div>
 
@@ -296,9 +296,9 @@
 </ng-template>
 <div class="radio radio2">
     <p class="paragraph2">ლეპტოპის მდგომარეობა</p>
-    <input type="radio" id="state" formControlName="laptop_state" name="state" value="new">
+    <input type="radio" id="state" formControlName="laptop_state"  value="new">
       <label for="state" class="SSD">ახალი</label>
-    <input type="radio" id="state2" formControlName="laptop_state" name="state" value="used">
+    <input type="radio" id="state2" formControlName="laptop_state" value="used">
       <label for="state2">მეორადი</label>
 </div>
 </div>

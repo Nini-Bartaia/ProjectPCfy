@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { SharedserviceService } from 'src/app/shared/sharedservice.service';
 import { Router } from '@angular/router';
+import { ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-logincomp',
   templateUrl: './logincomp.component.html',
-  styleUrls: ['./logincomp.component.scss']
+  styleUrls: ['./logincomp.component.scss'],
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class LogincompComponent implements OnInit {
   show:boolean=false;
