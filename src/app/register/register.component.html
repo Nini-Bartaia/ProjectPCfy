@@ -7,7 +7,7 @@
     margin-left: 10px;
     margin-top:45px;">
     
-<!-- <form [formGroup]="formArr"> -->
+
     
     <mat-tab-group #tabGroup >
        
@@ -79,27 +79,10 @@
                 </select>
             </div>
 
-            <!-- <span *ngIf="myform.get('surname')?.untouched || myform.get('surname')?.valid ; then showsurname; else errorsurname"></span> -->
-            <!-- *ngIf="!isValid || myform.get('teamId')?.untouched" -->
-            <!-- <div class="form-group" >
-
-                    
-                <select (change)="selectList($event)" [ngClass]="{ 'is-invalid': isValid && f['teamId'].errors }" formControlName="teamId" class="form-control">
-                    <option selected disabled hidden>თიმი</option>
-                    <option [value]="val.id" *ngFor="let val of mydata">
-                        {{val.name}}
-                    </option>
-                </select>
-                <div *ngIf="f['teamId'].errors['required']">
-                    Access Name is required
-                  </div>
-
-                
-                </div> -->
-                <!-- <span *ngIf="listError" class="danger"> sheiyvane</span> -->
+        
 
                 <span *ngIf="formArr.get('email')?.untouched || formArr.get('email')?.valid ; then showemail;else erroremail"></span>
-                <!-- *ngIf="myform.get('email')?.untouched || myform.get('email')?.valid ; then showemail; else erroremail" -->
+            
                 <ng-template #showemail>
                     <label for="mail" class="email">მეილი</label>
                     <input type="email" id="mail" class="e-mail" formControlName="email" placeholder="grish666@gmail.com">
@@ -111,7 +94,7 @@
                     <span class="mailspan" style="color:#E52F2F">უნდა მთავრდებოდეს @gmail.com-ით</span>
                 </ng-template>
                 <span *ngIf="formArr.get('phone_number')?.untouched || formArr.get('phone_number')?.valid ; then showphone;else errorphone"></span>
-                <!-- *ngIf="myform.get('phone')?.untouched || myform.get('phone')?.valid ; then showphone; else errorphone" -->
+              
                 <ng-template #showphone>
                     <label for="tel" class="phone2">ტელეფონის ნომერი</label>
                     <input type="tel" id="tel" formControlName="phone_number" placeholder="+995 598 00 07 01">
@@ -127,14 +110,7 @@
 
                     <button type="submit" class="btn"tabindex="-1" (click)='moveToSelectedTab("ლეპტოპის მახასიათებლები")' >შემდეგი</button>
                    
-                    <!-- <mat-tab label="ლეპტოპის მახასიათებლები"  #tab [disabled]='isDisabled' >second 
-                        <label for="nickname" class="name">nickname</label>
-                        <input type="text" id="nickname" formControlName="nickname" placeholder="გრიშა" class="name2" >
-                    
-                    </mat-tab> -->
-                    <!-- #tab [disabled]='!tab.isActive' -->
-                   
-                    <!-- #tab [disabled]='moveToSelectedTab("ლეპტოპის მახასიათებლები")' -->
+                  
                 
             </form >
             <img src="/assets/LOGO-10 2.png" alt="" class="logo1">
@@ -144,17 +120,12 @@
     <mat-tab label="ლეპტოპის მახასიათებლები"   #tab [disabled]="!tab.isActive" >
         <p *ngIf="onSubmit" class="ptag" >2/2</p>
         <form action="" class="form2"  [formGroup]="formArr">
-            <!-- formGroupName="secondForm" -->
-            <!-- [formGroup]="secondForm" -->
+
         <div class="upload">
             <img src="assets/Layer1.png" alt="" class="landing">
 
-           
-    
         </div>
 
- 
-    
     <div class="laptop" *ngIf="formArr.get('laptop_name')?.untouched || formArr.get('laptop_name')?.valid ; else laptop">
         <label for="cpu" class="laptopName Name8">ლეპტოპის სახელი</label>
         <input type="text" id="cpu"  placeholder="HP"  formControlName="laptop_name"  >
@@ -171,8 +142,6 @@
 
 <div class="parent2">
    
-    <!-- *ngIf="id; else brand"  -->
-    <!-- (click)="brand" -->
 
     <select (change)="selectList3($event)" class="brand"   >
         <option selected disabled hidden >ლეპტოპის ბრენდი</option>
@@ -181,18 +150,8 @@
         </option>
     </select >
 
-   
-    <!-- <ng-template #brand>
-        <select (change)="selectList3($event)" class="brand " style="border: 2px solid red;" >
-            <option selected disabled hidden >ლეპტოპის ბრენდი</option>
-            <option [value]="val.id" *ngFor="let val of brands" >
-                {{val.name}}
-            </option>
-        </select>
-    </ng-template> -->
-
     <hr>
-    <!-- (click)="Cpu" *ngIf="id; else brand2" -->
+
    
         <select  (change)="selectList4($event)" class="brand brand2">
             <option selected disabled hidden >CPU</option>
@@ -201,14 +160,6 @@
             </option>
         </select>
 
-        <!-- <ng-template #brand2>
-            <select  (change)="selectList4($event)" class="brand brand2" style=" border: 2px solid #E52F2F;">
-                <option selected disabled hidden >CPU</option>
-                <option [value]="val.id" *ngFor="let val of cpus" >
-                    {{val.name}}
-                </option>
-            </select>
-        </ng-template> -->
 
     
     <div class="div" *ngIf="formArr.get('laptop_cpu_cores')?.untouched || formArr.get('laptop_cpu_cores')?.valid ; else div">
@@ -305,27 +256,10 @@
 
 <p class="back" (click)='moveToSelectedTab2("თანამშრომლის ინფო")'>უკან</p>
 <button type="button" class="submit"  (click)="postData()" [disabled]="formArr.invalid">დამახსოვრება</button> 
-<!-- 
-(click)="postData()" -->
-
-
-<!-- <hr>
-<div class="div2 div3">
-    <label for="cpu" class="laptopName">ლეპტოპის RAM(GB)</label>
-    <input type="text" id="cpu"  placeholder="16" class="thread thread2">
-    <span  class="hint3 hint4">მხოლოდ ციფრები</span>
-
-</div> -->
-
-
-
 
         </form>
         <img src="assets/LOGO-10 2.png" alt="" *ngIf="!onMobile">
     </mat-tab>
 
 </mat-tab-group>
-<!-- </form> -->
-
-
 </body>

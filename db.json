@@ -39,6 +39,26 @@
       "laptop_price": "3456",
       "token": "6d8e33bcc7d765da654c61de1d4151af",
       "id": 2
+    },
+    {
+      "name": "ანა",
+      "surname": "ანა",
+      "team_id": "1",
+      "position_id": "2",
+      "email": "ana@gmail.com",
+      "phone_number": "+995558767889",
+      "laptop_name": "hp",
+      "laptop_brand_id": "2",
+      "laptop_cpu": "6",
+      "laptop_cpu_cores": "76",
+      "laptop_cpu_threads": "987",
+      "laptop_ram": "45",
+      "laptop_hard_drive_type": "SSD",
+      "laptop_state": "new",
+      "laptop_purchase_date": "2022-08-28",
+      "laptop_price": "7654",
+      "token": "6d8e33bcc7d765da654c61de1d4151af",
+      "id": 3
     }
   ]
 }

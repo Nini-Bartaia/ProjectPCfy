@@ -39,8 +39,6 @@ export class RegisterComponent implements OnInit {
   selectedFile:File|null=null;
   isNextDisabled=true
 
-  // fileSelected?:Blob;
- 
   @ViewChild('tabGroup', { static: false })
   tabGroup!: MatTabGroup;
   step:number=2;
@@ -49,7 +47,6 @@ export class RegisterComponent implements OnInit {
   public onMobile=false;
   token='6d8e33bcc7d765da654c61de1d4151af';
   title:string='img';
-  myImage!:Observable<any>
   base!:any;
 
 
@@ -90,54 +87,7 @@ export class RegisterComponent implements OnInit {
   
   }, { updateOn: 'blur' })
 
-  //   this.formArr= new FormGroup({myform:new UntypedFormGroup({
-  //     name: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.pattern(/^[ა-ჰ]+$/ )]),
-  //     surname: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.pattern(/^[ა-ჰ]+$/)]),
-  //     teamId: new FormControl(null,Validators.required),
-  //     positionId: new FormControl(null,Validators.required),
-  //     email: new FormControl('',[Validators.required,Validators.pattern(/^[^@]+@(redberry)\.ge$/i)]),
-  //     phone: new FormControl(null,[Validators.required,Validators.pattern(/^\d{9}$/)]),
-      
-
-  //   } ), secondForm:new UntypedFormGroup({
-  //     laptopName:new FormControl('',[Validators.required,Validators.pattern(/^[A-Za-z0-9\s!@#$%^&*()_+=-`~\\\]\[{}|';:/.,?><]*$/)]),
-  //     laptopImage: new FormControl('',Validators.required),
-  //     laptopBrandId:new FormControl('',Validators.required),
-  //     laptopCpu:new FormControl('',Validators.required),
-  //     laptopCpuCores: new FormControl(null,[Validators.required,Validators.pattern(/^[0-9]*$/)]),
-  //     laptopCpuThreads:new FormControl(null,[Validators.required,Validators.pattern(/^[0-9]*$/)]),
-  //     laptopRam:new FormControl(null,[Validators.required,Validators.pattern(/^[0-9]*$/)]),
-  //     laptopHardDriveType:new FormControl('',Validators.required),
-  //     laptopState:new FormControl('',Validators.required),
-  //     laptopPurchaseDate:new FormControl(''),
-  //     laptopPrice:new FormControl('',[Validators.required,Validators.pattern(/^[0-9]*$/)]),
-  //     })
   
-  // })
-    // this.myform=new UntypedFormGroup({
-    //   name: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.pattern('([a-zA-Z]+|[\\u10D0-\\u10F0]+)')]),
-    //   surname: new FormControl ('',[Validators.required,Validators.minLength(2),Validators.pattern('([a-zA-Z]+|[\\u10D0-\\u10F0]+)')]),
-    //   teamId: new FormControl(null,Validators.required),
-    //   positionId: new FormControl(null,Validators.required),
-    //   email: new FormControl('',[Validators.required,Validators.pattern(/^[^@]+@(redberry)\.ge$/i)]),
-    //   phone: new FormControl(null,[Validators.required,Validators.pattern(/^\d{9}$/)]),
-      
-
-    // } )
-
-    // this.secondForm=new UntypedFormGroup({
-    // laptopName:new FormControl('',[Validators.required,Validators.pattern(/^[A-Za-z0-9\s!@#$%^&*()_+=-`~\\\]\[{}|';:/.,?><]*$/)]),
-    // laptopImage: new FormControl('',Validators.required),
-    // laptopBrandId:new FormControl('',Validators.required),
-    // laptopCpu:new FormControl('',Validators.required),
-    // laptopCpuCores: new FormControl(null,[Validators.required,Validators.pattern(/^[0-9]*$/)]),
-    // laptopCpuThreads:new FormControl(null,[Validators.required,Validators.pattern(/^[0-9]*$/)]),
-    // laptopRam:new FormControl(null,[Validators.required,Validators.pattern(/^[0-9]*$/)]),
-    // laptopHardDriveType:new FormControl('',Validators.required),
-    // laptopState:new FormControl('',Validators.required),
-    // laptopPurchaseDate:new FormControl(''),
-    // laptopPrice:new FormControl('',[Validators.required,Validators.pattern(/^[0-9]*$/)]),
-    // })
     this.formArr.valueChanges.subscribe((v) => {
       this.isNextDisabled = !this.formArr.valid;
  });
@@ -173,16 +123,14 @@ export class RegisterComponent implements OnInit {
       console.error('error caught in component')
     })
 
-    // this.mydata = this.service.getData();
-    
+   
 
   }
 
  
-  // url="./assets/Frame.png";
   url=''
 
-  // url!: Observable<any>;
+ 
 
   public changeImage(e:any){
     if(e.target.files){
@@ -201,54 +149,32 @@ export class RegisterComponent implements OnInit {
     this.isshown=!this.isshown
   }
 
-  // public fun(){
-  //   if(this.getFile()){
-      
-  //   }
-  // }
-  // public hidden(){
-  //   this.show=!this.show
-  // }
 
-  // public get(){
-  //   this.service.getData().subscribe((data:any)=>{
-  //     console.log(data)
-  //     this.mydata=data;
-  //   })
-  // }
-  public selectList(e:any){
-     //.myform.controls['teamId'].setValue(e.target.value);
  
-     
+  public selectList(e:any){
     this.formArr.get('team_id')?.setValue(e.target.value)
-    
-    // this.myform.controls['positionId'].setValue(e.target.value);
     console.log(e.target.value)
-    //this.isValid=true;
+
     return e.target.value && this.hide==true
   }
   public selectList2(e:any){
-    //this.myform.controls['teamId'].setValue(e.target.value);
-    //this.myform.controls['positionId'].setValue(e.target.value);
     this.formArr.get('position_id')?.setValue(e.target.value)
    console.log(e.target.value)
-   //this.isValid=true;
+
    return e.target.value
  }
  public selectList3(e:any){
-  //this.myform.controls['teamId'].setValue(e.target.value);
-  //this.myform.controls['laptopBrandId'].setValue(e.target.value);
+  
   this.formArr.get('laptop_brand_id')?.setValue(e.target.value)
  console.log(e.target.value)
- //this.isValid=true;
+
  return e.target.value
 }
 public selectList4(e:any){
-  //this.myform.controls['teamId'].setValue(e.target.value);
- // this.myform.controls['laptopbCpu'].setValue(e.target.value);
+
  this.formArr.get('laptop_cpu')?.setValue(e.target.value)
  console.log(e.target.value)
- //this.isValid=true;
+
  return e.target.value
 }
 
@@ -269,17 +195,6 @@ public getFile(event:any){
 }
 
 
-// public getFile(event:any){
-//   this.url=(event.srcElement || event.target).files
-//   console.log(this.selectedFile);
-//   console.log(this.url)
-//   const filedata :FormData= new FormData();
-//   filedata.append('file',this.url[0]);
-//   console.log(filedata)
-//   console.log(typeof(filedata))
-//  this.upload(filedata);
- 
-// }
 upload(filedata: FormData){
   this.http.post(this.service.postApi+ '/users',filedata).subscribe(res=>{
         console.log(res)
@@ -287,82 +202,6 @@ upload(filedata: FormData){
         console.error('error caught in component')
       })
 }
-// public select(event: any){
-//   this.selectedFile=<File>event.target.files[0]
-//   this.formArr.get('laptop_image')?.setValue(this.selectedFile)
-//   console.log(this.selectedFile)
-// }
-// public getFile(event: any){
-  
-//   this.selectedFile=<File>event.target.files[0]
-//   this.formArr.get('laptop_image')?.setValue(this.selectedFile)
-//   const filedata :FormData= new FormData();
-//   filedata.append('image',this.selectedFile, this.selectedFile.name);
-//   console.log(filedata)
-//   console.log(typeof(filedata))
-//   this.http.post(this.service.postApi+'/users',filedata)
-  
-//    return this.isshown 
- 
-// }
-
-
-
-
-// public getFile($event:Event){
-//   const target=$event.target as HTMLInputElement;
-//   const file:File= (target.files as FileList)[0];
-//   console.log(file)
-//   this.convert(file);
- 
-// }
-
-// public convert(file:File){
-// const observer= new Observable((subscriber:Subscriber<any>)=>{
-//   this.readFile(file,subscriber);
-
-// })
-
-// observer.subscribe((d)=>{
-//   console.log(d)
-// })
-// }
-
-// public readFile(file:File,subscriber: Subscriber<any>){
-//       const filereader=new FileReader();
-//       filereader.readAsDataURL(file);
-//       filereader.onload=()=>{
-//         subscriber.next(filereader.result)
-
-//         subscriber.complete
-//       }
-// }
-
-// convert(file:File){
-//     this.url= new Observable((subscriber: Subscriber<any>)=>{
-//       this.readFile(selectedFile, subscriber)
-//     })
-// }
-// readFile(selectedFile:File,subscriber :Subscriber<any>){
-//     const filereader= new FileReader();
-//     filereader.readAsDataURL(selectedFile);
-
-//     filereader.onload=()=>{
-//       subscriber.next(filereader.result);
-//       subscriber.complete();
-//       console.log(selectedFile)
-//     }
-// }
-
-
-
-// public postImage(){
-//   const upload= new FormData();
-//   upload.append('image',this.selectedFile!,this.selectedFile!.name)
-//   this.http.post('https://pcfy.redberryinternship.ge/api/laptop/create',upload).subscribe(res =>{
-//     console.log(res);
-//   })
-// }
 
 
   get listError(){
@@ -436,23 +275,7 @@ buttonClick() {
   //  or
  // this.tabGroup._tabs['_results'][1].disabled = true;
 }
-// moveToSelectedTab(tabName: string) {
-//   console.log(this.formArr.get('myform'))
-//       if(this.formArr.get('myform')?.valid ){
-//         console.log(this.formArr.get('myform'))
-//       if ((<HTMLElement>document.querySelectorAll('.mat-tab-label-content')[1]).innerText == tabName) {
-//         console.log((<HTMLElement>document.querySelectorAll('.mat-tab-label-content')[1]).innerText);
-//         (<HTMLElement>document.querySelectorAll('.mat-tab-label')[1]).click();
-//         //console.log( (<HTMLElement>document.querySelectorAll('.mat-tab-label')[1]).click());
-//         //  this.isDisabled=false;
-//         //  console.log(this.isDisabled)
-//        // console.log(this.tabGroup._tabs.toArray()[1])
-//           return this.tabGroup._tabs.toArray()[1].isActive = true;
-//       }
-//     }
-//     return this.tabGroup._tabs.toArray()[1].isActive = false;
-     
-// :)))))))))))))) }
+
 
 moveToSelectedTab(tabName: string) {
   console.log(this.formArr)
